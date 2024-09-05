@@ -1,6 +1,6 @@
 services:
-  reg_helper:
-    container_name: reg_helper
+  ce-smart-career:
+    container_name: ce-smart-career
     build:
       context: .
       dockerfile: Dockerfile
