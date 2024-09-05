@@ -1,0 +1,26 @@
+name: CD
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    branches: ["main"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: self-hosted
+    if: ${{
+      github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.event == 'push'
+      }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy docker-compose stack
+        run: docker compose up -d --build --force-recreate
+
+      - name: Prune Docker system
+        run: docker system prune -af
