@@ -1,0 +1,33 @@
+# Build directories
+build/*
+dist/*
+public/*
+**/out/*
+**/.next/*
+**/node_modules/*
+
+# src/
+**/reportWebVitals.*
+**/service-worker.*
+**/serviceWorkerRegistration.*
+**/setupTests.*
+
+# eslintrc
+**/.eslintrc.*
+
+# prettier
+**/.prettier.*
+**/prettier.config.*
+
+# next
+**/next.config.*
+
+# tailwind
+**/postcss.config.*
+**/tailwind.config.*
+
+# craco
+**/craco.config.*
+
+# misc
+**/jsconfig.json
