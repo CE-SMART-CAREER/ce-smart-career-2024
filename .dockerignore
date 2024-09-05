@@ -1,0 +1,14 @@
+.git
+node_modules
+docker-compose.yml
+Dockerfile
+.prettierrc
+.prettierignore
+.gitignore
+.eslintrc.js
+README.md
+.husky
+.github
+.next
+!.next/static
+!.next/standalone
