@@ -31,7 +31,7 @@ module.exports = {
   rules: {
     // general
     'no-alert': 0,
-    camelcase: 0,
+    // camelcase: 0,
     'no-console': 0,
     'no-unused-vars': 1,
     'no-nested-ternary': 1,
@@ -43,7 +43,7 @@ module.exports = {
     'prefer-destructuring': [1, { object: true, array: false }],
 
     // typescript
-    '@typescript-eslint/naming-convention': 1,
+    '@typescript-eslint/naming-convention': 0,
     '@typescript-eslint/no-use-before-define': 1,
     '@typescript-eslint/consistent-type-exports': 1,
     '@typescript-eslint/consistent-type-imports': 1,
