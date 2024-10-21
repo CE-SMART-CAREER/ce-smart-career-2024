@@ -3,14 +3,16 @@ import type { Config } from 'tailwindcss';
 const config: Config = {
     darkMode: ['class'],
     content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/shared/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/modules/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+	],
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
+  			background: 'var(--background)',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -49,13 +51,37 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			  orange: {
+				'75': 'var(--orange-75)',
+				'100': 'var(--orange-100)',
+				'200': 'var(--orange-200)',
+				'300': 'var(--orange-300)',
+				'400': 'var(--orange-400)',
+				'500': 'var(--orange-500)',
+			  },
+			  gray: {
+				'75': 'var(--gray-75)',
+				'100': 'var(--gray-100)',
+				'200': 'var(--gray-200)',
+				'300': 'var(--gray-300)',
+				'400': 'var(--gray-400)',
+				'500': 'var(--gray-500)',
+			  },
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  backgroundImage: {
+			'linear-white': 'var(--linear-white)',
+			'linear-black-orange ': 'var(--linear-black-orange )',
+			'linear-gray': 'var(--linear-gray)',
+			'linear-soft-gray': 'var(--linear-soft-gray)',
+			'linear-orange-gray': 'var(--linear-orange-gray)',
+			'linear-gray-orange': 'var(--linear-gray-orange',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],
