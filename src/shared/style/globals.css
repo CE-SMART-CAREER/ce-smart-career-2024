@@ -80,8 +80,8 @@ body {
 
     --orange-75: #fbcea3;
     --orange-100: #fab97d;
-    --orange-200: #f6871e;
-    --orange-300: #f6871f;
+    --orange-200: #f89b44;
+    --orange-300: #f6871e;
     --orange-400: #ac5f15;
     --orange-500: #965212;
 
@@ -166,6 +166,19 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+.fill-text {
+  display: grid;
+  justify-content: start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  word-break: keep-all;
+  width: 0;
+  color: red;
+  transition: 0.5s width ease-in-out;
 }
 
 @layer base {
