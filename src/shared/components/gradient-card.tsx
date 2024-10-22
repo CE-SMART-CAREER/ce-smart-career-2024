@@ -14,10 +14,11 @@ export function GradientCard({
   variant = 'primary',
 }: PropsWithChildren<Props>) {
   const variantClasses = {
-    primary: 'bg-linear-white before:bg-linear-gray backdrop-blur-[70.5px]',
+    primary:
+      'bg-linear-white before:bg-linear-soft-gray backdrop-blur-[70.5px]',
     secondary:
-      'bg-linear-black-pink before:bg-linear-gray backdrop-blur-[70.5px]',
-    translucent: 'bg-linear-purple-gray before:bg-linear-gray',
+      'bg-linear-black-orange before:bg-linear-soft-gray backdrop-blur-[70.5px]',
+    translucent: 'bg-linear-orange-gray before:bg-linear-soft-gray',
   };
 
   return (
