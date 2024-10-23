@@ -1,32 +1,40 @@
 'use client';
-import { useCallback, useState } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
 
-type UseBooleanReturn = {
+import { useMemo, useState, useCallback } from 'react';
+
+export type UseBooleanReturn = {
   value: boolean;
-  setValue: Dispatch<SetStateAction<boolean>>;
-  setTrue: () => void;
-  setFalse: () => void;
-  toggle: () => void;
+  onTrue: () => void;
+  onFalse: () => void;
+  onToggle: () => void;
+  setValue: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export function useBoolean(defaultValue = false): UseBooleanReturn {
-  if (typeof defaultValue !== 'boolean') {
-    throw new Error('defaultValue must be `true` or `false`');
-  }
+export function useBoolean(defaultValue: boolean = false): UseBooleanReturn {
   const [value, setValue] = useState(defaultValue);
 
-  const setTrue = useCallback(() => {
+  const onTrue = useCallback(() => {
     setValue(true);
   }, []);
 
-  const setFalse = useCallback(() => {
+  const onFalse = useCallback(() => {
     setValue(false);
   }, []);
 
-  const toggle = useCallback(() => {
-    setValue((x) => !x);
+  const onToggle = useCallback(() => {
+    setValue((prev) => !prev);
   }, []);
 
-  return { value, setValue, setTrue, setFalse, toggle };
+  const memoizedValue = useMemo(
+    () => ({
+      value,
+      onTrue,
+      onFalse,
+      onToggle,
+      setValue,
+    }),
+    [value, onTrue, onFalse, onToggle, setValue],
+  );
+
+  return memoizedValue;
 }

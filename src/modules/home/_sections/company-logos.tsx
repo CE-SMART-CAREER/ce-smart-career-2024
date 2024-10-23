@@ -30,9 +30,9 @@ export default function Location() {
           บริษัทที่เข้าร่วม
         </h2>
         <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
-          {companies.map((company, index) =>
-            CompanyLogo({ key: index, company: company }),
-          )}
+          {companies.map((company, index) => (
+            <CompanyLogo key={index} company={company} />
+          ))}
         </div>
       </section>
     </article>

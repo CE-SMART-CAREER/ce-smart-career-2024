@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import type { PropsWithChildren } from 'react';
@@ -21,10 +23,10 @@ type Props = {
 };
 
 export function CompanyLogo({ key, company }: PropsWithChildren<Props>) {
-  const openModal = useBoolean();
+  const openModal = useBoolean(false);
 
   return (
-    <Dialog open={openModal.value} onOpenChange={openModal.toggle}>
+    <Dialog open={openModal.value} onOpenChange={openModal.onToggle}>
       <DialogTrigger asChild>
         <div
           key={key}
