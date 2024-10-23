@@ -1,4 +1,5 @@
 import { Location } from '@/modules/home/_sections';
+import { Seminar } from '@/modules/home/_sections';
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <header></header>
       <main>
         <Location />
+        <Seminar />
       </main>
       <footer></footer>
     </>
