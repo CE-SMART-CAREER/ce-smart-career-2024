@@ -1,4 +1,4 @@
-import { Location } from '@/modules/home/_sections';
+import { Location, CompanyLogos } from '@/modules/home/_sections';
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <header></header>
       <main>
         <Location />
+        <CompanyLogos />
       </main>
       <footer></footer>
     </>
