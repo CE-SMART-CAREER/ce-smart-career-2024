@@ -38,7 +38,7 @@ function Chart({ content } : ChartProps) {
               alt={content.alt}
               width={725}
               height={290}
-              className="min-w-[725px] h-full animate-fade rounded-sm"
+              className="min-w-[725px] h-full rounded-md"
             />
           </div>
         </DialogContent>
