@@ -76,7 +76,7 @@ const config: Config = {
   		},
 		  backgroundImage: {
 			'linear-white': 'var(--linear-white)',
-			'linear-black-orange': 'var(--linear-black-orange )',
+			'linear-black-orange': 'var(--linear-black-orange)',
 			'linear-gray': 'var(--linear-gray)',
 			'linear-soft-gray': 'var(--linear-soft-gray)',
 			'linear-orange-gray': 'var(--linear-orange-gray)',
