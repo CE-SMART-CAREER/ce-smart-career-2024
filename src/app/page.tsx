@@ -9,6 +9,8 @@ export default function Home() {
       </header>
       <main>
         <CompanyLogos />
+        <Location />
+        <Seminar />
       </main>
       <Footer />
     </>
