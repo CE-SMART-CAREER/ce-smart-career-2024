@@ -22,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn('antialiased', ibmPlexSansThai.className, 'w-screen')}
+        className={cn(
+          ibmPlexSansThai.className,
+          'w-screen cursor-default bg-black antialiased',
+        )}
       >
         {children}
       </body>
