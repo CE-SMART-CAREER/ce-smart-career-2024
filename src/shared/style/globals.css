@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  @apply select-none;
   @apply text-white;
 }
 
@@ -42,8 +43,8 @@ body {
   :root {
     --linear-white: linear-gradient(
       112.54deg,
-      rgba(255, 255, 255, 0.15) 10.29%,
-      rgba(0, 0, 0, 0) 100.35%
+      rgba(255, 255, 255, 0.1) 10.29%,
+      rgba(0, 0, 0, 0.1) 100.35%
     );
 
     --linear-gray: linear-gradient(
@@ -55,8 +56,8 @@ body {
 
     --linear-soft-gray: linear-gradient(
       112.54deg,
-      rgba(255, 255, 255, 0.1) 6.21%,
-      rgba(113, 113, 113, 0.1) 43.78%,
+      rgba(255, 255, 255, 0.05) 6.21%,
+      rgba(113, 113, 113, 0.05) 43.78%,
       rgba(255, 255, 255, 0.05) 77.1%
     );
 
