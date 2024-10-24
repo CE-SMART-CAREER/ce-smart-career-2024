@@ -1,111 +1,51 @@
-'use client';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
+import { SeminarTable } from '@/shared/components/seminar-table';
+import { seminarList } from '@/shared/constants/seminar-data';
+import Image from 'next/image';
 
-import { useBoolean } from '@/shared/hooks/use-boolean';
-
-type SeminarData = {
-  time: string;
-  room1: string;
-  room2: string;
-};
-
-const day1Data: SeminarData[] = [
-  {
-    time: '09:00 AM',
-    room1: 'Albert McDaniel Seminar',
-    room2: 'Connor McDaniel Seminar',
-  },
-  {
-    time: '10:00 AM',
-    room1: 'Isabelle Hansen Seminar',
-    room2: 'Jennie Fuller Seminar',
-  },
-  {
-    time: '11:00 AM',
-    room1: 'Daniel Wise Seminar',
-    room2: 'Erik Rios Seminar',
-  },
-  {
-    time: '12:00 AM',
-    room1: 'Tom McCoy Seminar',
-    room2: 'Carolyn Goodwin Seminar',
-  },
-];
-
-const day2Data: SeminarData[] = [
-  {
-    time: '09:00 AM',
-    room1: 'Seth Singleton Seminar',
-    room2: 'May Ferguson Seminar',
-  },
-  {
-    time: '10:00 AM',
-    room1: 'Bertha Andrews Science Seminar',
-    room2: 'Kathryn Garrett Seminar',
-  },
-  {
-    time: '11:00 AM',
-    room1: 'Carl Miller Seminar',
-    room2: 'Evan Martinez Seminar',
-  },
-  {
-    time: '12:00 AM',
-    room1: 'Craig Jensen Seminar',
-    room2: 'Connor Gonzales Seminar',
-  },
-];
-
-export default function SeminarTable() {
-  const selectDay1 = useBoolean(true);
-
-  const seminarData = selectDay1.value ? day1Data : day2Data;
-
+export default function Seminar() {
   return (
-    <article className="relative bg-black">
+    <article className="relative mx-auto flex flex-col bg-black xl:max-w-screen-xl">
+      <div className="relative w-full">
+        <Image
+          src="/assets/illustrations/cloud.png"
+          alt="cloud-png"
+          width={2880}
+          height={347}
+          className="object-cover"
+        />
+      </div>
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-orange-200 opacity-30 blur-2xl"></div>
-      <div className="relative mx-auto flex h-svh w-10/12 flex-col justify-center md:w-3/4">
+
+      <div className="relative mx-auto flex h-svh w-10/12 flex-col md:w-3/4">
         <h2 className="w-full text-3xl font-bold md:text-4xl">
           กำหนดการสัมมนา
         </h2>
 
-        <div className="my-6 flex flex-row flex-wrap gap-7">
-          <span
-            className={`flex cursor-pointer flex-row flex-wrap items-baseline gap-5 p-3 ${selectDay1.value ? 'border-b-2 border-b-orange-300 text-orange-300' : 'text-gray-400 hover:text-white'}`}
-            onClick={selectDay1.onTrue}
-          >
-            <span className="text-xl md:text-2xl">Day 1 </span>
-            <span className="text-md md:text-xl">28 November 24</span>
-          </span>
-          <span
-            className={`flex cursor-pointer flex-row flex-wrap items-baseline gap-5 p-3 ${!selectDay1.value ? 'border-b-2 border-b-orange-300 text-orange-300' : 'text-gray-400 hover:text-white'}`}
-            onClick={selectDay1.onFalse}
-          >
-            <span className="text-xl md:text-2xl">Day 2 </span>
-            <span className="text-md md:text-xl">29 November 24</span>
-          </span>
-        </div>
-
-        <table className="border-collapse overflow-hidden rounded-lg border-none bg-linear-gray-orange">
-          <thead>
-            <tr>
-              <th className="w-1/3 border-none p-10 pl-20 text-left">เวลา</th>
-              <th className="w-1/3 border-none p-10 text-left">
-                ห้องที่ 1 (001)
-              </th>
-              <th className="w-1/3 border-none p-10 text-left">
-                ห้องที่ 2 (002)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {seminarData.map((entry) => (
-              <tr key={entry.time}>
-                <td className="w-1/3 border-none p-10 pl-20">{entry.time}</td>
-                <td className="w-1/3 border-none p-10">{entry.room1}</td>
-                <td className="w-1/3 border-none p-10">{entry.room2}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Tabs defaultValue="day1" className="flex flex-col gap-2">
+          <TabsList className="mx-10 my-6 flex w-fit flex-row flex-wrap gap-4 md:gap-6 lg:gap-20">
+            <TabsTrigger
+              value="day1"
+              className="flex flex-row flex-wrap items-baseline gap-5 py-3 text-xl text-gray-400 transition-colors duration-300 hover:text-white data-[state=active]:border-b-2 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 md:text-2xl"
+            >
+              <span className="text-xl font-bold md:text-2xl">Day 1 </span>
+              <span className="text-md md:text-xl">28 November 24</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="day2"
+              className="flex flex-row flex-wrap items-baseline gap-5 py-3 text-xl text-gray-400 transition-colors duration-300 hover:text-white data-[state=active]:border-b-2 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 md:text-2xl"
+            >
+              <span className="text-xl font-bold md:text-2xl">Day 2 </span>
+              <span className="text-md md:text-xl">29 November 24</span>
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="day1">
+            <SeminarTable data={seminarList['day1']} />
+          </TabsContent>
+          <TabsContent value="day2">
+            <SeminarTable data={seminarList['day2']} />
+          </TabsContent>
+        </Tabs>
       </div>
     </article>
   );
