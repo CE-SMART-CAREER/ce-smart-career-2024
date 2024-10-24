@@ -11,15 +11,13 @@ import {
 } from '@/shared/components/ui/dialog';
 
 type Props = {
-  company: {
-    name: string;
-    logo: string;
-    type: string;
-    description: string;
-  };
+  name: string;
+  logo: string;
+  type: string;
+  description: string;
 };
 
-export function CompanyLogo({ company }: Props) {
+export function CompanyLogo({ name, logo, type, description }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -29,8 +27,8 @@ export function CompanyLogo({ company }: Props) {
             className="flex w-full items-center justify-center outline-none"
           >
             <Image
-              src={company.logo}
-              alt={company.name}
+              src={logo}
+              alt={name}
               width={164}
               height={61}
               className="object-contain"
@@ -44,18 +42,18 @@ export function CompanyLogo({ company }: Props) {
         <DialogContent className="fixed left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-linear-soft-gray p-8 text-gray-900 shadow backdrop-blur-3xl data-[state=closed]:animate-[dialog-content-hide_200ms] data-[state=open]:animate-[dialog-content-show_200ms] [&>button]:hidden">
           <div className="flex flex-col justify-between gap-4 text-white">
             <Image
-              src={company.logo}
-              alt={company.name}
+              src={logo}
+              alt={name}
               width={164}
               height={61}
               className="mx-auto w-full max-w-[30ch] object-contain"
             />
             <DialogTitle>
-              <div className="text-md pt-4">{company.name}</div>
-              <div className="pt-2 text-orange-300">{company.type}</div>
+              <div className="text-md pt-4">{name}</div>
+              <div className="pt-2 text-orange-300">{type}</div>
             </DialogTitle>
             <DialogDescription>
-              <div className="text-white">{company.description}</div>
+              <div className="text-white">{description}</div>
             </DialogDescription>
           </div>
         </DialogContent>

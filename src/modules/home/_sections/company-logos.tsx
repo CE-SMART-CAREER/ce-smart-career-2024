@@ -1,21 +1,6 @@
-import { CompanyLogo } from '@/shared/components';
+import { CompanyLogo } from '../_components';
 
-const companies = [
-  {
-    name: 'Siam Commercial Bank (ธนาคารไทยพาณิชย์)',
-    logo: '/assets/images/company-logos/scb.png',
-    type: 'Insurance company',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, fuga. Sequi, iste ipsam officiis dolor maiores doloremque rerum distinctio quia asperiores molestias debitis minus similique nihil, ipsa, quas dolorem explicabo?',
-  },
-  {
-    name: 'Bluebik',
-    logo: '/assets/images/company-logos/bluebik.png',
-    type: 'Insurance company',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, fuga. Sequi, iste ipsam officiis dolor maiores doloremque rerum distinctio quia asperiores molestias debitis minus similique nihil, ipsa, quas dolorem explicabo?',
-  },
-];
+import { companies } from '../_constants';
 
 export default function CompanyLogos() {
   return (
@@ -27,7 +12,7 @@ export default function CompanyLogos() {
         </h2>
         <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
           {companies.map((company, index) => (
-            <CompanyLogo key={index} company={company} />
+            <CompanyLogo key={index} {...company} />
           ))}
         </div>
       </section>
