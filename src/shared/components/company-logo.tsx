@@ -23,7 +23,7 @@ export function CompanyLogo({ company }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
+        <div className="cursor-pointer rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
           <AspectRatio
             ratio={16 / 9}
             className="flex w-full items-center justify-center outline-none"
