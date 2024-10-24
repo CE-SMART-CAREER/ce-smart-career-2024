@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 import {
@@ -11,10 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/shared/components/ui/dialog';
-import { useBoolean } from '@/shared/hooks';
 
 type Props = {
-  key: number;
   company: {
     name: string;
     logo: string;
@@ -23,16 +19,11 @@ type Props = {
   };
 };
 
-export function CompanyLogo({ key, company }: Props) {
-  const openModal = useBoolean(false);
-
+export function CompanyLogo({ company }: Props) {
   return (
-    <Dialog open={openModal.value} onOpenChange={openModal.onToggle}>
+    <Dialog>
       <DialogTrigger asChild>
-        <div
-          key={key}
-          className="rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg"
-        >
+        <div className="rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
           <AspectRatio
             ratio={16 / 9}
             className="flex w-full items-center justify-center outline-none"

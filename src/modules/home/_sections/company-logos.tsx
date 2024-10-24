@@ -8,9 +8,16 @@ const companies = [
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, fuga. Sequi, iste ipsam officiis dolor maiores doloremque rerum distinctio quia asperiores molestias debitis minus similique nihil, ipsa, quas dolorem explicabo?',
   },
+  {
+    name: 'Bluebik',
+    logo: '/assets/images/company-logos/bluebik.png',
+    type: 'Insurance company',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, fuga. Sequi, iste ipsam officiis dolor maiores doloremque rerum distinctio quia asperiores molestias debitis minus similique nihil, ipsa, quas dolorem explicabo?',
+  },
 ];
 
-export default function Location() {
+export default function CompanyLogos() {
   return (
     <article className="mx-auto flex flex-col justify-center bg-black">
       <section className="bg-linear-orange-gray px-0 py-10 text-white sm:px-10">
