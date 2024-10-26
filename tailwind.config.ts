@@ -76,11 +76,49 @@ const config: Config = {
   		},
 		  backgroundImage: {
 			'linear-white': 'var(--linear-white)',
-			'linear-black-orange': 'var(--linear-black-orange )',
+			'linear-black-orange': 'var(--linear-black-orange)',
 			'linear-gray': 'var(--linear-gray)',
 			'linear-soft-gray': 'var(--linear-soft-gray)',
 			'linear-orange-gray': 'var(--linear-orange-gray)',
 			'linear-gray-orange': 'var(--linear-gray-orange)',
+		  },
+		  keyframes: {
+			'accordion-down': {
+			  from: {
+				height: '0',
+			  },
+			  to: {
+				height: 'var(--radix-accordion-content-height)',
+			  },
+			},
+			'accordion-up': {
+			  from: {
+				height: 'var(--radix-accordion-content-height)',
+			  },
+			  to: {
+				height: '0',
+			  },
+			},
+			'fadeIn': {
+			  from: {
+				opacity: '0',
+			  },
+			  to: {
+				opacity: '1',
+			  },
+			},
+			'loadingDots': {
+			  '0%, 100%': { transform: 'scale(1)' },
+			  '50%': { transform: 'scale(0.5)' },
+			},
+		  },
+		  animation: {
+			'accordion-down': 'accordion-down 0.2s ease-out',
+			'accordion-up': 'accordion-up 0.2s ease-out',
+			'fade': 'fadeIn 1.0s ease-in-out',
+			'loadingDots1': 'loadingDots 1s infinite ease-in-out',
+			'loadingDots2': 'loadingDots 1s infinite ease-in-out 0.2s',
+			'loadingDots3': 'loadingDots 1s infinite ease-in-out 0.4s',
 		  },
   	}
   },
