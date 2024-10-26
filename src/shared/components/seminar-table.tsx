@@ -1,8 +1,9 @@
 import { SeminarData } from '@/shared/types/seminar-data';
+import { formatDate12Hour } from '../utils/formatDate';
 
-export function SeminarTable({ data }: { data: SeminarData[] }) {
+export function SeminarTable({ seminars }: { seminars: SeminarData[] }) {
   return (
-    <table className="w-full border-collapse overflow-hidden rounded-lg border-none bg-linear-gray-orange">
+    <table className="bg-linear-gray-orange w-full border-collapse overflow-hidden rounded-lg border-none">
       <thead>
         <tr>
           <th className="md:pl-15 mx-6 w-1/3 border-none py-4 pl-10 text-left md:py-10 lg:pl-20">
@@ -17,16 +18,16 @@ export function SeminarTable({ data }: { data: SeminarData[] }) {
         </tr>
       </thead>
       <tbody>
-        {data.map((dataRow) => (
-          <tr key={dataRow.time}>
+        {seminars.map((seminar) => (
+          <tr key={seminar.time}>
             <td className="md:pl-15 mx-6 w-1/3 border-none py-4 pl-10 md:py-10 lg:pl-20">
-              {dataRow.time}
+              {formatDate12Hour(seminar.time)}
             </td>
             <td className="mx-6 w-1/3 border-none py-4 md:py-10">
-              {dataRow.room1}
+              {seminar.room1}
             </td>
             <td className="mx-6 w-1/3 border-none py-4 md:py-10">
-              {dataRow.room2}
+              {seminar.room2}
             </td>
           </tr>
         ))}
