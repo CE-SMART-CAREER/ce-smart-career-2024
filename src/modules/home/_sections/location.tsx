@@ -1,23 +1,29 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/utils/cn';
 import { GradientCard } from '@/shared/components';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from '@/shared/components/ui/dialog';
 import Image from 'next/image';
 
 import { tabsContent, tabsTrigger } from '../_constants';
 import { companyList } from '@/shared/constants';
 import type { ChartContent, TriggerBtn } from '../_types';
 import type { Company } from '@/shared/types';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/components/ui/button';
+
+import { Icon } from '@iconify/react';
 
 type ChartProps = {
   content: ChartContent;
 };
 
-function Chart({ content } : ChartProps) {
+function Chart({ content }: ChartProps) {
   return (
-    <div className="flex flex-col h-full w-full justify-center py-5 lg:py-0 gap-2">
+    <div className="flex h-full w-full flex-col justify-center gap-2 py-5 lg:py-0">
       <AspectRatio className="flex h-full w-full items-center" ratio={16 / 7}>
         <Image
           src={content.src}
@@ -28,17 +34,17 @@ function Chart({ content } : ChartProps) {
         />
       </AspectRatio>
       <Dialog>
-        <DialogTrigger asChild className="block sm:hidden self-start">
+        <DialogTrigger asChild className="block self-start sm:hidden">
           <Button variant="outline">ขยายภาพ</Button>
         </DialogTrigger>
-        <DialogContent className="flex w-[90vw] h-1/2 p-9 rounded-lg">
+        <DialogContent className="flex h-1/2 w-[90vw] rounded-lg p-9">
           <div className="flex h-full overflow-x-scroll">
             <Image
               src={content.src}
               alt={content.alt}
               width={725}
               height={290}
-              className="min-w-[725px] h-full rounded-md"
+              className="h-full min-w-[725px] rounded-md"
             />
           </div>
         </DialogContent>
@@ -93,7 +99,7 @@ export default function Location() {
                     value={content.value}
                     key={content.value}
                   >
-                    <Chart content={content}/>
+                    <Chart content={content} />
                   </TabsContent>
                 );
               })}
@@ -106,21 +112,20 @@ export default function Location() {
 
               <GradientCard className="flex items-center gap-5 px-5 py-1">
                 <span>
-                  <Image
-                    src="/assets/icons/search-icon.svg"
-                    alt="searchg-icons"
-                    height={20}
-                    width={20}
+                  <Icon
+                    icon="hugeicons:search-01"
+                    width="1.25rem"
+                    height="1.25rem"
                   />
                 </span>
                 <input
                   className="h-full w-full bg-transparent placeholder-gray-100 focus:outline-0"
                   type="text"
-                  placeholder="พิมพ์ชื่อบริษัทย์"
+                  placeholder="พิมพ์ชื่อบริษัท"
                 ></input>
               </GradientCard>
 
-              <ul className="flex max-h-[350px] w-full flex-col gap-2 overflow-y-auto pl-2 pr-5 text-sm sm:text-base">
+              <ul className="flex max-h-[350px] w-full flex-col gap-2 overflow-y-auto pr-3 text-sm sm:text-base">
                 {companyList.map((company: Company) => {
                   return (
                     <li

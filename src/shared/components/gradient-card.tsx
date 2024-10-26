@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { cn } from '../utils';
+import { cn } from '@/shared/utils/cn';
 
 type Variant = 'primary' | 'secondary' | 'translucent';
 
