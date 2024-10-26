@@ -10,7 +10,7 @@ export default function CompanyLogos() {
           บริษัทที่เข้าร่วม
           <span className="visuallyhidden">กิจกรรม CE smart career 2024</span>
         </h2>
-        <div className="grid grid-cols-3 gap-6 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
+        <div className="grid grid-cols-2 gap-6 px-4 sm:grid-cols-3 sm:px-6 md:grid-cols-4 lg:px-8">
           {companies.map((company, index) => (
             <CompanyLogo key={index} {...company} />
           ))}
