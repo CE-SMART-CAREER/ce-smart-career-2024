@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  @apply text-white;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --linear-white: linear-gradient(
+      112.54deg,
+      rgba(255, 255, 255, 0.15) 10.29%,
+      rgba(0, 0, 0, 0) 100.35%
+    );
+
+    --linear-gray: linear-gradient(
+      112.54deg,
+      rgba(255, 255, 255, 0.2) 6.21%,
+      rgba(113, 113, 113, 0.2) 43.78%,
+      rgba(255, 255, 255, 0.2) 77.1%
+    );
+
+    --linear-soft-gray: linear-gradient(
+      112.54deg,
+      rgba(255, 255, 255, 0.1) 6.21%,
+      rgba(113, 113, 113, 0.1) 43.78%,
+      rgba(255, 255, 255, 0.05) 77.1%
+    );
+
+    --linear-black-orange: linear-gradient(
+      112.54deg,
+      rgba(14, 7, 21, 0.2) 10.29%,
+      rgba(246, 135, 30, 0.2) 100.35%
+    );
+
+    --linear-orange-gray: linear-gradient(
+      129.31deg,
+      rgba(246, 135, 30, 0.2) 9.16%,
+      rgba(153, 153, 153, 0) 94.08%
+    );
+
+    --linear-gray-orange: linear-gradient(
+      112.54deg,
+      rgba(255, 255, 255, 0.2) 10.29%,
+      rgba(246, 135, 30, 0.2) 100.35%
+    );
+
+    --orange-75: #fbcea3;
+    --orange-100: #fab97d;
+    --orange-200: #f6871e;
+    --orange-300: #f6871f;
+    --orange-400: #ac5f15;
+    --orange-500: #965212;
+
+    --gray-75: #d3d3d3;
+    --gray-100: #c1c1c1;
+    --gray-200: #a6a6a6;
+    --gray-300: #949494;
+    --gray-400: #6b6b6b;
+    --gray-500: #5a5a5a;
+
+    --error-75: #f7a9a9;
+    --error-100: #f38686;
+    --error-200: #ee5252;
+    --error-300: #eb2e2e;
+    --error-400: #a52020;
+    --error-500: #8f1c1c;
+    --warning-75: #fdecb4;
+    --warning-100: #fce494;
+    --warning-200: #fbd866;
+    --warning-300: #fad047;
+    --warning-400: #af9232;
+    --warning-500: #997f2b;
+    --success-75: #98e7ba;
+    --success-100: #6ddd9e;
+    --success-200: #2ecf74;
+    --success-300: #03c557;
+    --success-400: #028a3d;
+    --success-500: #027835;
+
+    --white: #fff;
+    --black: #000;
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
