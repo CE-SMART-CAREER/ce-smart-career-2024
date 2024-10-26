@@ -1,4 +1,4 @@
-import { Seminar } from '@/shared/types/seminar-data';
+import type { Seminar } from '@/shared/types/seminar-data';
 import { formatDate24Hour } from '../utils/formatDate';
 
 export function SeminarTable({ seminars }: { seminars: Seminar[] }) {

@@ -1,4 +1,4 @@
-import { Seminar, SeminarData, SeminarDay } from "../../../shared/types/seminar-data";
+import type { Seminar, SeminarData, SeminarDay } from "../../../shared/types/seminar-data";
 
 export function createSeminarList(data: SeminarData[]): SeminarDay[] {
     const seminarList: SeminarDay[] = [];
@@ -12,7 +12,7 @@ export function createSeminarList(data: SeminarData[]): SeminarDay[] {
         seminarList.push(seminarDay);
       }
   
-      let existingSeminars = seminarDay.seminars.filter(s => s.startAt === seminar.startAt && s.endAt === seminar.endAt);
+      const existingSeminars = seminarDay.seminars.filter(s => s.startAt === seminar.startAt && s.endAt === seminar.endAt);
   
       if (existingSeminars.length === 0) {
         const newSeminar: Seminar = {

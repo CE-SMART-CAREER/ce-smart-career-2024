@@ -1,4 +1,4 @@
-import { Seminar } from '@/shared/types/seminar-data';
+import type { Seminar } from '@/shared/types/seminar-data';
 
 export type SeminarList = {
   date: string;
