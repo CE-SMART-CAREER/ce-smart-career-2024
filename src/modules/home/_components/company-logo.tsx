@@ -31,7 +31,7 @@ export function CompanyLogo({ name, logo, type, description }: Props) {
               alt={name}
               width={164}
               height={61}
-              className="object-contain"
+              className="w-full object-contain"
             />
           </AspectRatio>
         </div>
