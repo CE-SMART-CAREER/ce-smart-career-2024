@@ -9,7 +9,7 @@ export type ConfigValue = {
 export const CONFIG: ConfigValue = {
   env: process.env.NODE_ENV,
   nocodb: {
-    apiUrl: process.env.DATABASE_API_URL ?? '',
-    token: process.env.DATABASE_API_TOKEN ?? '',
+    apiUrl: process.env.NOCODB_API_URL ?? '',
+    token: process.env.NOCODB_API_TOKEN ?? '',
   },
 };
