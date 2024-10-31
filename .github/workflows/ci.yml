@@ -27,6 +27,11 @@ jobs:
         uses: pnpm/action-setup@v4.0.0
         with:
           version: 9
+          
+      - name: Create .env file
+        run: |
+          echo "NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }}" >> .env
+          echo "NOCODB_API_URL=${{ secrets.NOCODB_API_URL }}" >> .env
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
