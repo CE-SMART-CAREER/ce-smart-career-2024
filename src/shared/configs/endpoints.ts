@@ -3,16 +3,15 @@ import { CONFIG } from '@/global-config';
 const baseURL = CONFIG.nocodb.apiUrl;
 
 const ROOTS = {
-  COMPANY: 'mfmvjx4x38tca0o',
-  SEMINAR: 'vwena4xyonf4csiuv',
+  COMPANY: `${baseURL}/mfmvjx4x38tca0o`,
+  SEMINAR: `${baseURL}/vwena4xyonf4csiuv`,
 };
 
 export const endpoints = {
   company: {
-    records: `${baseURL}/${ROOTS.COMPANY}/records`,
+    records: `${ROOTS.COMPANY}/records`,
   },
-
   seminar: {
-    records: `${baseURL}/${ROOTS.SEMINAR}/records`,
+    records: `${ROOTS.SEMINAR}/records`,
   },
 };

@@ -1,23 +1,6 @@
 import { CompanyLogo } from '../_components';
-import { getCompanies } from '../_services/nocodb';
-
-type Seminar = {
-  startAt: string;
-  endAt: string;
-  room: number;
-};
-
-type CompanyInfo = {
-  Id: number;
-  name: string;
-  description: string;
-  link: string;
-  logo: string;
-  date: string;
-  type: string;
-  nc_pejk___seminar_id: number;
-  seminar: Seminar | null;
-};
+import { getCompanies } from '../_services';
+import type { CompanyInfo } from '../_types';
 
 export default async function CompanyLogos() {
   const companies = await getCompanies();
