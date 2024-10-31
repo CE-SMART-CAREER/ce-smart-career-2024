@@ -7,7 +7,7 @@ import {
 import { NavBar } from '@/shared/components/navbar';
 
 type SearchParamProps = {
-  searchParams: Record<string, string> | null | undefined;
+  searchParams: Record<string, string>;
 };
 
 export default function Home({ searchParams }: SearchParamProps) {

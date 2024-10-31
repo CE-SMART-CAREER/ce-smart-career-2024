@@ -12,6 +12,5 @@ export type CompanyInfo = {
   logo: string;
   date: string;
   type: string;
-  nc_pejk___seminar_id: number;
   seminar: Seminar | null;
 };
