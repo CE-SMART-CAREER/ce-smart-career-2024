@@ -1,13 +1,16 @@
-import { CompanyLogos } from '@/modules/home/_sections';
+import { CompanyLogos, Footer } from '@/modules/home/_sections';
+import { NavBar } from '@/shared/components/navbar';
 
 export default function Home() {
   return (
     <>
-      <header></header>
+      <header>
+        <NavBar />
+      </header>
       <main>
         <CompanyLogos />
       </main>
-      <footer></footer>
+      <Footer />
     </>
   );
 }
