@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
-import { SeminarTable } from '@/shared/components/seminar-table';
+import { SeminarTable } from '@/modules/home/_components';
 import { seminarList } from '@/shared/constants/seminar-data';
-import { formatDateToString } from '@/shared/utils/formatDate';
 import Image from 'next/image';
+import { fDate, formatStr } from '@/shared/utils';
 
 export default function Seminar() {
   return (
@@ -35,7 +35,7 @@ export default function Seminar() {
                   Day {index + 1}{' '}
                 </span>
                 <span className="text-md md:text-xl">
-                  {formatDateToString(seminarSlot.date)}
+                  {fDate(seminarSlot.date, formatStr.longDate)}
                 </span>
               </TabsTrigger>
             ))}

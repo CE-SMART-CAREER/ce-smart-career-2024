@@ -1,10 +1,4 @@
-export type Seminar = {
-  startAt: string;
-  endAt: string;
-  room: number;
-};
-
-export type CompanyInfo = {
+export type Company = {
   Id: number;
   name: string;
   description: string;
@@ -13,5 +7,4 @@ export type CompanyInfo = {
   date: string;
   type: string;
   nc_pejk___seminar_id: number;
-  seminar: Seminar | null;
 };

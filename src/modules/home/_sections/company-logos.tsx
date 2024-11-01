@@ -1,6 +1,6 @@
 import { CompanyLogo } from '../_components';
 import { getCompanies } from '../_services';
-import type { CompanyInfo } from '../_types';
+import type { Company } from '../_types';
 
 export default async function CompanyLogos() {
   const companies = await getCompanies();
@@ -13,7 +13,7 @@ export default async function CompanyLogos() {
           <span className="visuallyhidden">กิจกรรม CE smart career 2024</span>
         </h2>
         <div className="grid grid-cols-2 gap-6 px-4 sm:grid-cols-3 sm:px-6 md:grid-cols-4 lg:px-8">
-          {companies?.list?.map((company: CompanyInfo, index: number) => (
+          {companies?.list?.map((company: Company, index: number) => (
             <CompanyLogo
               key={index}
               name={company?.name}

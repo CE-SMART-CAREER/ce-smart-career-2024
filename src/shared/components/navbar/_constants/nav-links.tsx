@@ -1,7 +1,4 @@
-export type NavListItem = {
-  name: string;
-  href: string;
-};
+import type { NavListItem } from '../_types';
 
 export const NAV_LINKS: NavListItem[] = [
   {
