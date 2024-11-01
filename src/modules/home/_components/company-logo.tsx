@@ -10,7 +10,11 @@ type Props = {
 
 export function CompanyLogo({ name, logo, companyId }: Props) {
   return (
-    <Link key={companyId} href={{ query: { companyId: companyId } }} shallow>
+    <Link
+      key={companyId}
+      href={{ query: { companyId: companyId } }}
+      scroll={false}
+    >
       <div className="cursor-pointer rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
         <AspectRatio
           ratio={16 / 9}

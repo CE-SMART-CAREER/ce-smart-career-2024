@@ -1,6 +1,7 @@
 import { CompanyLogo } from '../_components';
 import { CompanyInfoModal } from '../_components/company-info-modal';
-import { getCompanies } from '../_services/nocodb';
+import { getCompanies } from '../_services';
+
 import type { Company } from '../_types';
 
 type Props = {
@@ -11,11 +12,14 @@ export default async function CompanyLogos({ selectedCompanyId }: Props) {
   const companies = await getCompanies();
 
   const selectedCompany = companies?.list?.find(
-    (company: CompanyInfo) => company.Id === selectedCompanyId,
+    (company: Company) => company.Id === selectedCompanyId,
   );
 
   return (
-    <article className="mx-auto flex flex-col justify-center bg-black">
+    <article
+      id="companies"
+      className="mx-auto flex flex-col justify-center bg-black"
+    >
       <section className="bg-linear-orange-gray px-0 py-10 text-white sm:px-10">
         <h2 className="mb-10 text-center text-3xl font-semibold">
           บริษัทที่เข้าร่วม

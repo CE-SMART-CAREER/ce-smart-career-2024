@@ -10,7 +10,7 @@ import {
   DialogPortal,
   DialogTitle,
 } from '@/shared/components/ui/dialog';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 type Props = {
   name: string;
@@ -20,8 +20,14 @@ type Props = {
 };
 
 export function CompanyInfoModal({ name, logo, type, description }: Props) {
+  const router = useRouter();
+
+  const closeModal = () => {
+    router.replace('/', { scroll: false });
+  };
+
   return (
-    <Dialog defaultOpen={true} onOpenChange={(open) => redirect(`/`)}>
+    <Dialog defaultOpen={true} onOpenChange={closeModal}>
       <DialogPortal>
         <DialogOverlay className="bg-black/50" />
         <DialogContent className="max-w-[min(28rem,_90vw)] rounded-md bg-white text-black sm:max-w-md">
