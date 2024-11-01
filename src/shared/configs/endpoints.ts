@@ -4,7 +4,7 @@ const baseURL = CONFIG.nocodb.apiUrl;
 
 const ROOTS = {
   COMPANY: `${baseURL}/mfmvjx4x38tca0o`,
-  SEMINAR: `${baseURL}/vwena4xyonf4csiuv`,
+  SEMINAR: `${baseURL}/mwq1zx2p3ocwxnf`,
 };
 
 export const endpoints = {
