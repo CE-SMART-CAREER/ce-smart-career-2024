@@ -1,9 +1,9 @@
-export type NavListItemType = {
+export type NavListItem = {
   name: string;
   href: string;
 };
 
-const nav_tabs: NavListItemType[] = [
+export const NAV_LINKS: NavListItem[] = [
   {
     name: 'เกี่ยวกับ',
     href: '#',
@@ -25,5 +25,3 @@ const nav_tabs: NavListItemType[] = [
     href: '#',
   },
 ];
-
-export default nav_tabs;

@@ -2,9 +2,6 @@
   "name": "ce-next-gen-frontend-2024",
   "version": "0.1.0",
   "private": true,
-  "lint-staged": {
-    "*.js": "eslint --fix"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

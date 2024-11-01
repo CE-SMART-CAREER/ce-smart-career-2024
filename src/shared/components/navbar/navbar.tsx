@@ -1,18 +1,14 @@
-import React from 'react';
-import type { NavListItemType } from './_constants/nav-tabs';
+import { NAV_LINKS } from './_constants';
+import Link from 'next/link';
 
-type Props = {
-  items: NavListItemType[];
-};
-
-export default function NavBar({ items }: Props) {
+export function NavBar() {
   return (
     <nav className="flex items-center justify-between bg-gray-200 p-4">
       <h1>CE Smart Career 2024</h1>
       <ul className="flex space-x-6 font-bold">
-        {items.map((item, index) => (
+        {NAV_LINKS.map((navLink, index) => (
           <li key={index}>
-            <a href={item.href}>{item.name}</a>
+            <Link href={navLink.href}>{navLink.name}</Link>
           </li>
         ))}
       </ul>
