@@ -1,11 +1,6 @@
-import type { Seminar } from '@/shared/types/seminar-data';
+import type { SeminarDay } from '@/modules/home/_types';
 
-export type SeminarList = {
-  date: string;
-  seminars: Seminar[];
-}[];
-
-export const seminarList: SeminarList = [
+export const seminarList: SeminarDay[] = [
   {
     date: '2024-11-28T00:00:00.000Z',
     seminars: [

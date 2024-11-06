@@ -1,7 +1,7 @@
-import type { Seminar } from '@/shared/types/seminar-data';
+import type { SeminarSlot } from '../_types';
 import { formatStr, fTime } from '@/shared/utils';
 
-export function SeminarTable({ seminars }: { seminars: Seminar[] }) {
+export function SeminarTable({ seminars }: { seminars: SeminarSlot[] }) {
   return (
     <table className="w-full border-collapse overflow-hidden rounded-lg border-none bg-linear-gray-orange">
       <thead>
