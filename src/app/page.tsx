@@ -6,7 +6,11 @@ import {
 } from '@/modules/home/_sections';
 import { NavBar } from '@/shared/components/navbar';
 
-export default function Home() {
+type SearchParamProps = {
+  searchParams: Record<string, string>;
+};
+
+export default function Home({ searchParams }: SearchParamProps) {
   return (
     <>
       <header>
@@ -14,7 +18,11 @@ export default function Home() {
       </header>
       <main>
         <Seminar />
-        <CompanyLogos />
+        <CompanyLogos
+          selectedCompanyId={
+            searchParams?.companyId ? Number(searchParams.companyId) : 0
+          }
+        />
         <Location />
       </main>
       <Footer />
