@@ -1,12 +1,14 @@
+import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { SeminarTable } from '@/modules/home/_components';
-import { seminarList } from '@/shared/constants/seminar-data';
-import Image from 'next/image';
 import { fDate, formatStr } from '@/shared/utils';
+import { getSeminarsGroupedByDay } from '../_utils';
 
-export default function Seminar() {
+export default async function Seminar() {
+  const seminarList = await getSeminarsGroupedByDay();
+
   return (
-    <article className="relative mx-auto flex flex-col bg-black xl:max-w-screen-xl">
+    <article className="relative mx-auto flex flex-col bg-black pb-20">
       <div className="relative w-full">
         <Image
           src="/assets/illustrations/cloud.png"
@@ -18,10 +20,15 @@ export default function Seminar() {
       </div>
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-orange-200 opacity-30 blur-2xl"></div>
 
-      <div className="relative mx-auto flex h-svh w-10/12 flex-col md:w-3/4">
+      <div className="relative mx-auto flex w-10/12 flex-col md:w-3/4">
         <h2 className="w-full text-3xl font-bold md:text-4xl">
           กำหนดการสัมมนา
         </h2>
+        {seminarList.length <= 0 && (
+          <p className="mt-4 w-full text-2xl font-bold md:text-2xl">
+            ไม่พบกำหนดการ
+          </p>
+        )}
 
         <Tabs defaultValue="day1" className="flex flex-col gap-2">
           <TabsList className="mx-10 my-6 flex w-fit flex-row flex-wrap gap-4 md:gap-6 lg:gap-20">
