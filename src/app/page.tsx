@@ -1,17 +1,31 @@
-import { CompanyLogos } from '@/modules/home/_sections';
-import NavBar from '../shared/components/navbar/navbar';
-import nav_tabs from '@/shared/components/navbar/_constants/nav-tabs';
+import {
+  CompanyLogos,
+  Footer,
+  Location,
+  Seminar,
+} from '@/modules/home/_sections';
+import { NavBar } from '@/shared/components/navbar';
 
-export default function Home() {
+type SearchParamProps = {
+  searchParams: Record<string, string>;
+};
+
+export default function Home({ searchParams }: SearchParamProps) {
   return (
     <>
       <header>
-        <NavBar items={nav_tabs} />
+        <NavBar />
       </header>
       <main>
-        <CompanyLogos />
+        <Seminar />
+        <CompanyLogos
+          selectedCompanyId={
+            searchParams?.companyId ? Number(searchParams.companyId) : 0
+          }
+        />
+        <Location />
       </main>
-      <footer></footer>
+      <Footer />
     </>
   );
 }
