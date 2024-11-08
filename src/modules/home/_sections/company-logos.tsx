@@ -1,17 +1,15 @@
 import { CompanyLogo } from '../_components';
 import { CompanyInfoModal } from '../_components/company-info-modal';
-import { getCompanies } from '../_services';
 
 import type { Company } from '../_types';
 
 type Props = {
+  companies: Company[];
   selectedCompanyId: number;
 };
 
-export default async function CompanyLogos({ selectedCompanyId }: Props) {
-  const companies = await getCompanies();
-
-  const selectedCompany = companies?.list?.find(
+export default function CompanyLogos({ companies, selectedCompanyId }: Props) {
+  const selectedCompany = companies?.find(
     (company: Company) => company.Id === selectedCompanyId,
   );
 
@@ -27,7 +25,7 @@ export default async function CompanyLogos({ selectedCompanyId }: Props) {
         </h2>
 
         <div className="grid grid-cols-2 gap-6 px-4 sm:grid-cols-3 sm:px-6 md:grid-cols-4 lg:px-8">
-          {companies?.list?.map((company: Company, index: number) => (
+          {companies?.map((company: Company, index: number) => (
             <CompanyLogo
               key={index}
               name={company?.name}
