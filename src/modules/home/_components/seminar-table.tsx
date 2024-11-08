@@ -1,7 +1,11 @@
 import type { SeminarSlot } from '../_types';
 import { formatStr, fTime } from '@/shared/utils';
 
-export function SeminarTable({ seminars }: { seminars: SeminarSlot[] }) {
+type Props = {
+  seminars: SeminarSlot[];
+};
+
+export function SeminarTable({ seminars }: Props) {
   return (
     <table className="w-full border-collapse overflow-hidden rounded-lg border-none bg-linear-gray-orange">
       <thead>
