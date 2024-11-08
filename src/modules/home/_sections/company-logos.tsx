@@ -8,10 +8,7 @@ type Props = {
   selectedCompanyId: number;
 };
 
-export default async function CompanyLogos({
-  companies,
-  selectedCompanyId,
-}: Props) {
+export default function CompanyLogos({ companies, selectedCompanyId }: Props) {
   const selectedCompany = companies?.find(
     (company: Company) => company.Id === selectedCompanyId,
   );
