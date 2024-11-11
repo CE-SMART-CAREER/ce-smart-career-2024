@@ -47,7 +47,7 @@ export function NavBar() {
       <Root onOpenChange={(open) => setIsMenuOpen(open)}>
         <Trigger className="md:hidden" aria-label="Open Menu">
           <svg
-            className={`h-6 w-6 ${isMenuOpen ? 'text-white' : 'text-gray-800'}`}
+            className={`h-6 w-6 ${isMenuOpen ? 'text-white' : 'hover:drop-shadow'}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ export function NavBar() {
         <Content
           align="start"
           sideOffset={5}
-          className="w-full rounded-lg bg-white p-4 shadow-md md:hidden"
+          className="w-full rounded-lg bg-black p-4 text-white shadow-md md:hidden"
         >
           <ul className="flex flex-col space-y-4">
             {NAV_LINKS.map((navLink, index) => (
@@ -74,8 +74,8 @@ export function NavBar() {
                   href={navLink.href}
                   className={`block ${
                     activeSection === navLink.href.slice(1)
-                      ? 'text-orange-200'
-                      : 'text-gray-800 transition-colors hover:text-orange-200'
+                      ? 'text-orange-200 underline underline-offset-4 transition-colors'
+                      : 'hover:text-shadow-orange text-white transition-colors'
                   }`}
                 >
                   {navLink.name}
@@ -87,15 +87,15 @@ export function NavBar() {
         </Content>
       </Root>
 
-      <ul className="hidden space-x-6 font-bold md:flex">
+      <ul className="mx-2 hidden space-x-6 font-bold md:flex">
         {NAV_LINKS.map((navLink, index) => (
           <li key={index}>
             <Link
               href={navLink.href}
               className={`${
                 activeSection === navLink.href.slice(1)
-                  ? 'text-orange-200'
-                  : 'text-gray-500 transition-colors hover:text-white'
+                  ? 'text-orange-200 underline underline-offset-4 transition-colors'
+                  : 'text-white transition-colors hover:text-orange-300'
               }`}
             >
               {navLink.name}
