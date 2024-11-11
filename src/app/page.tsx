@@ -5,12 +5,15 @@ import {
   Seminar,
 } from '@/modules/home/_sections';
 import { NavBar } from '@/shared/components/navbar';
+import { getCompanies } from '../modules/home/_services';
 
 type SearchParamProps = {
   searchParams: Record<string, string>;
 };
 
-export default function Home({ searchParams }: SearchParamProps) {
+export default async function Home({ searchParams }: SearchParamProps) {
+  const companies = await getCompanies();
+
   return (
     <>
       <header>
@@ -19,6 +22,7 @@ export default function Home({ searchParams }: SearchParamProps) {
       <main>
         <Seminar />
         <CompanyLogos
+          companies={companies?.list}
           selectedCompanyId={
             searchParams?.companyId ? Number(searchParams.companyId) : 0
           }
