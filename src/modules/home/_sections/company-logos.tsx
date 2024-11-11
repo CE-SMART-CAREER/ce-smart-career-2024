@@ -16,10 +16,10 @@ export default async function CompanyLogos({ selectedCompanyId }: Props) {
   );
 
   return (
-    <article
-      id="companies"
-      className="mx-auto flex flex-col justify-center bg-black"
-    >
+    <article className="mx-auto flex flex-col justify-center bg-black">
+      <div id="companies" className="anchor-holder invisible relative p-4">
+        $
+      </div>
       <section className="bg-linear-orange-gray px-0 py-10 text-white sm:px-10">
         <h2 className="mb-10 text-center text-3xl font-semibold">
           บริษัทที่เข้าร่วม
