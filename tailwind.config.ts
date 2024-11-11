@@ -81,6 +81,7 @@ const config: Config = {
 			'linear-soft-gray': 'var(--linear-soft-gray)',
 			'linear-orange-gray': 'var(--linear-orange-gray)',
 			'linear-gray-orange': 'var(--linear-gray-orange)',
+			'linear-black-orange-hori': 'var(--linear-black-orange-hori)',
 		  },
 		  keyframes: {
 			'accordion-down': {

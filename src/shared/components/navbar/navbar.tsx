@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function NavBar() {
   return (
-    <nav className="flex items-center justify-between bg-gray-200 p-4">
+    <nav className="bg-black-200 flex items-center justify-between bg-linear-orange-gray p-4">
       <h1>CE Smart Career 2024</h1>
       <ul className="flex space-x-6 font-bold">
         {NAV_LINKS.map((navLink, index) => (
