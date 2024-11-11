@@ -60,6 +60,9 @@ export default function Location() {
   return (
     <div className="relative mx-auto flex min-h-svh flex-col justify-center lg:h-svh xl:max-w-screen-xl">
       <div className="flex h-full w-full flex-col gap-5 p-10 sm:p-20 lg:justify-center xl:p-0">
+        <div id="locations" className="anchor-holder invisible p-4">
+          $
+        </div>
         <h2 className="w-full text-2xl font-bold sm:text-3xl md:text-4xl">
           สถานที่ และผังงาน
         </h2>
