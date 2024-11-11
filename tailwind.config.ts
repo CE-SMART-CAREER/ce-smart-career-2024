@@ -80,6 +80,7 @@ const config: Config = {
 			'linear-gray': 'var(--linear-gray)',
 			'linear-soft-gray': 'var(--linear-soft-gray)',
 			'linear-orange-gray': 'var(--linear-orange-gray)',
+			'linear-orange-black': 'var(--linear-orange-black)',
 			'linear-gray-orange': 'var(--linear-gray-orange)',
 			'linear-black-orange-hori': 'var(--linear-black-orange-hori)',
 		  },

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   @apply select-none;
@@ -73,11 +77,18 @@ body {
       rgba(153, 153, 153, 0) 94.08%
     );
 
+    --linear-orange-black: linear-gradient(
+      112.54deg,
+      rgba(246, 135, 30, 0.4) 10.29%,
+      rgba(0, 0, 0, 1) 100.35%
+    );
+
     --linear-gray-orange: linear-gradient(
       112.54deg,
       rgba(255, 255, 255, 0.2) 10.29%,
       rgba(246, 135, 30, 0.2) 100.35%
     );
+
     --linear-black-orange-hori: linear-gradient(
       180deg,
       rgba(14, 7, 21, 0.2) 10.29%,
