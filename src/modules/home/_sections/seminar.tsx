@@ -21,10 +21,10 @@ export default async function Seminar() {
           className="object-cover"
         />
       </div>
-      <div className="absolute left-6 top-0 h-20 w-20 rounded-full bg-orange-100 opacity-25 blur-2xl sm:h-16 sm:w-16 md:h-48 md:w-48 xl:left-10 xl:h-60 xl:w-60"></div>
-      <div className="absolute left-0 top-0 h-24 w-32 rounded-full bg-orange-200 opacity-25 blur-3xl sm:h-28 sm:w-36 md:h-64 md:w-80 xl:left-14 xl:h-96 xl:w-72"></div>
+      <div className="absolute left-6 top-20 h-20 w-20 rounded-full bg-orange-100 opacity-50 blur-2xl sm:h-16 sm:w-16 md:h-48 md:w-48 md:opacity-25 xl:left-10 xl:h-60 xl:w-60"></div>
+      <div className="absolute left-0 top-20 h-24 w-32 rounded-full bg-orange-200 opacity-50 blur-3xl sm:h-28 sm:w-36 md:h-64 md:w-80 md:opacity-25 xl:left-14 xl:h-96 xl:w-72"></div>
 
-      <div className="relative mx-auto flex w-10/12 flex-col pt-[8%] md:w-3/4">
+      <div className="relative mx-auto flex w-10/12 flex-col md:w-3/4">
         <h2 className="w-full text-3xl font-bold sm:text-3xl md:text-4xl">
           กำหนดการสัมมนา
         </h2>
@@ -40,7 +40,7 @@ export default async function Seminar() {
               <TabsTrigger
                 key={index + 1}
                 value={`day${index + 1}`}
-                className="flex flex-row flex-wrap items-baseline gap-2 text-xl text-gray-400 transition-colors duration-300 hover:text-white data-[state=active]:border-b-4 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 sm:gap-5 sm:py-2 md:text-2xl"
+                className="flex flex-row flex-wrap items-baseline gap-2 text-xl text-gray-100 transition-colors duration-300 hover:text-white data-[state=active]:border-b-4 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 sm:gap-5 sm:py-2 md:text-2xl"
               >
                 <span className="text-lg font-bold sm:text-xl md:text-2xl">
                   Day {index + 1}{' '}
