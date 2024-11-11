@@ -7,7 +7,7 @@ type Props = {
 
 export function SeminarTable({ seminars }: Props) {
   return (
-    <div className="h-[60svh] overflow-auto rounded-lg">
+    <div className="h-[80svh] overflow-auto rounded-lg">
       <table className="w-full table-auto border-collapse animate-fade rounded-lg border-none bg-linear-gray-orange">
         <thead>
           <tr>
