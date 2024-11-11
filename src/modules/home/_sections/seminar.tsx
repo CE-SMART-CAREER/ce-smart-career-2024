@@ -8,8 +8,11 @@ export default async function Seminar() {
   const seminarList = await getSeminarsGroupedByDay();
 
   return (
-    <article className="relative mx-auto flex h-svh flex-col bg-black">
-      <div className="absolute h-full w-full">
+    <article className="relative mx-auto flex flex-col bg-black pb-20">
+      <div id="seminar" className="anchor-holder invisible relative p-4">
+        #
+      </div>
+      <div className="relative w-full">
         <Image
           src="/assets/illustrations/cloud.png"
           alt="cloud-png"

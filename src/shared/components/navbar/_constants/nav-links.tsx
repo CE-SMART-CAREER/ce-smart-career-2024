@@ -3,22 +3,22 @@ import type { NavListItem } from '../_types';
 export const NAV_LINKS: NavListItem[] = [
   {
     name: 'เกี่ยวกับ',
-    href: '#',
+    href: '#about',
   },
   {
     name: 'สัมมนา',
-    href: '#',
+    href: '#seminar',
   },
   {
     name: 'บริษัท',
-    href: '#',
+    href: '#companies',
   },
   {
     name: 'สถานที่',
-    href: '#',
+    href: '#locations',
   },
   {
     name: 'ช่องทางติดต่อ',
-    href: '#',
+    href: '#contact',
   },
 ];
