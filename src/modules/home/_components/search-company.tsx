@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { Company } from '../_types';
 import { GradientCard } from '@/shared/components';
 import { Input } from '@/shared/components/ui/input';
@@ -14,8 +14,24 @@ type Props = {
 };
 
 export function SearchCompany({ companies }: Props) {
-  'use client';
   const [searchValue, setSearchValue] = useState<string>('');
+  const companyList = useMemo(() => {
+    return companies
+      .filter((company: Company) =>
+        company.name.toLowerCase().includes(searchValue),
+      )
+      .map((company: Company, index: number) => {
+        return (
+          <TabsTrigger
+            value={dayMapper.get(company.date) ?? DayValueTrigger.FIRST_DAY}
+            className="text-filling-animation flex w-full flex-shrink-0 cursor-pointer py-2"
+            key={`${company.name}-${index}`}
+          >
+            {company.name}
+          </TabsTrigger>
+        );
+      });
+  }, [searchValue, companies]);
 
   return (
     <>
@@ -33,25 +49,7 @@ export function SearchCompany({ companies }: Props) {
       </GradientCard>
 
       <ScrollArea className="h-[65svh] pr-5 text-sm sm:text-base lg:h-[300px]">
-        <TabsList>
-          {companies
-            .filter((company: Company) =>
-              company.name.toLowerCase().includes(searchValue),
-            )
-            .map((company: Company, index: number) => {
-              return (
-                <TabsTrigger
-                  value={
-                    dayMapper.get(company.date) ?? DayValueTrigger.FIRST_DAY
-                  }
-                  className="text-filling-animation flex w-full flex-shrink-0 cursor-pointer py-2"
-                  key={`${company.name}-${index}`}
-                >
-                  {company.name}
-                </TabsTrigger>
-              );
-            })}
-        </TabsList>
+        <TabsList>{companyList}</TabsList>
       </ScrollArea>
     </>
   );
