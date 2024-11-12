@@ -13,10 +13,10 @@ export default async function Seminar() {
   const seminarList = await getSeminarsGroupedByDay();
 
   return (
-    <article className="relative mx-auto flex flex-col bg-black pb-20">
-      <div id="seminar" className="anchor-holder invisible relative p-4">
-        #
-      </div>
+    <article
+      id="seminar"
+      className="relative mx-auto flex flex-col bg-black pb-20"
+    >
       <div className="relative w-full">
         <Image
           src="/assets/illustrations/cloud.png"
@@ -45,7 +45,7 @@ export default async function Seminar() {
               <TabsTrigger
                 key={index + 1}
                 value={`day${index + 1}`}
-                className="flex flex-row flex-wrap items-baseline gap-2 text-xl text-gray-100 transition-colors duration-300 hover:text-white data-[state=active]:border-b-4 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 sm:gap-5 sm:py-2 md:text-2xl"
+                className="flex flex-row flex-wrap items-baseline gap-2 border-b-4 border-b-gray-500 text-xl text-white transition-colors duration-300 data-[state=active]:border-b-orange-300 data-[state=active]:text-orange-300 sm:gap-5 sm:py-2 md:text-2xl"
               >
                 <span className="text-lg font-bold sm:text-xl md:text-2xl">
                   Day {index + 1}{' '}
