@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2.5rem;
 }
 
 body {
