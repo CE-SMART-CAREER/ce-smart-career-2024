@@ -7,8 +7,8 @@ export enum DayValueTrigger {
 }
 
 export const dayMapper = new Map<string, DayValueTrigger>([
-  ['2024-10-27', DayValueTrigger.FIRST_DAY],
-  ['2024-10-28', DayValueTrigger.SECOND_DAY],
+  ['2024-11-28', DayValueTrigger.FIRST_DAY],
+  ['2024-11-29', DayValueTrigger.SECOND_DAY],
 ]);
 
 export const tabsTrigger: TriggerBtn[] = [
