@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { cn } from '@/shared/utils/cn';
 
-type Variant = 'primary' | 'secondary' | 'translucent';
+type Variant = 'primary' | 'secondary' | 'translucent' | 'tertiary';
 
 type Props = {
   className?: string;
@@ -19,6 +19,8 @@ export function GradientCard({
     secondary:
       'bg-linear-black-orange before:bg-linear-soft-gray backdrop-blur-[70.5px]',
     translucent: 'bg-linear-orange-gray before:bg-linear-soft-gray',
+    tertiary:
+      'bg-linear-orange-black before:bg-linear-gray backdrop-blur-[70.5px]',
   };
 
   return (

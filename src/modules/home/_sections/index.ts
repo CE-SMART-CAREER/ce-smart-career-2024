@@ -7,3 +7,5 @@ export { default as Seminar } from './seminar';
 export { default as Footer } from './footer';
 
 export { default as Introduction } from './introduction';
+
+export { default as Description } from './description';

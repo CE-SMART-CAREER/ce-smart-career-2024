@@ -83,7 +83,8 @@ const config: Config = {
         'linear-orange-black': 'var(--linear-orange-black)',
         'linear-gray-orange': 'var(--linear-gray-orange)',
         'linear-black-orange-hori': 'var(--linear-black-orange-hori)',
-        'radial-orange-black': 'var(--radial-orange-black)'
+        'radial-orange-black': 'var(--radial-orange-black)',
+        'linear-orange-black-vertical': 'var(--linear-orange-black-vertical)'
       },
       keyframes: {
         'accordion-down': {

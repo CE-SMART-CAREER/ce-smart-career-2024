@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Root, Trigger, Content, Arrow } from '@radix-ui/react-popover';
 import { NAV_LINKS } from './_constants';
 import Link from 'next/link';
+import { cn } from '@/shared/utils';
 
 export function NavBar() {
   const [activeSection, setActiveSection] = useState('');
@@ -41,13 +42,16 @@ export function NavBar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray p-4">
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray p-4 backdrop-blur-[100px]">
       <h1 className="font-bold">CE Smart Career 2024</h1>
 
       <Root onOpenChange={(open) => setIsMenuOpen(open)}>
         <Trigger className="md:hidden" aria-label="Open Menu">
           <svg
-            className={`h-6 w-6 ${isMenuOpen ? 'text-white' : 'hover:drop-shadow'}`}
+            className={cn(
+              'h-6 w-6',
+              isMenuOpen ? 'text-white' : 'hover:drop-shadow',
+            )}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -72,11 +76,12 @@ export function NavBar() {
               <li key={index}>
                 <Link
                   href={navLink.href}
-                  className={`block ${
+                  className={cn(
+                    'transition-colors',
                     activeSection === navLink.href.slice(1)
-                      ? 'text-orange-200 underline underline-offset-4 transition-colors'
-                      : 'hover:text-shadow-orange text-white transition-colors'
-                  }`}
+                      ? 'text-orange-200 underline underline-offset-4'
+                      : 'hover:text-shadow-orange text-white',
+                  )}
                 >
                   {navLink.name}
                 </Link>
@@ -92,11 +97,12 @@ export function NavBar() {
           <li key={index}>
             <Link
               href={navLink.href}
-              className={`${
+              className={cn(
+                'transition-colors',
                 activeSection === navLink.href.slice(1)
-                  ? 'text-orange-200 underline underline-offset-4 transition-colors'
-                  : 'text-white transition-colors hover:text-orange-300'
-              }`}
+                  ? 'text-orange-200 underline underline-offset-4'
+                  : 'text-white hover:text-orange-300',
+              )}
             >
               {navLink.name}
             </Link>
