@@ -7,17 +7,17 @@ type Props = {
 
 export function SeminarTable({ seminars }: Props) {
   return (
-    <div className="h-[80svh] overflow-auto rounded-lg">
+    <div className="overflow-auto rounded-lg">
       <table className="w-full table-auto border-collapse animate-fade rounded-lg border-none bg-linear-gray-orange">
         <thead>
           <tr>
-            <th className="md:pl-15 mx-6 w-1/3 animate-fade border-none py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
+            <th className="md:pl-15 mx-6 w-1/3 animate-fade border-b-2 border-gray-300 py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
               เวลา
             </th>
-            <th className="w-1/3 animate-fade border-none py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
+            <th className="w-1/3 animate-fade border-b-2 border-gray-300 py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
               ห้องที่ 1 (001)
             </th>
-            <th className="w-1/3 animate-fade border-none py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
+            <th className="w-1/3 animate-fade border-b-2 border-gray-300 py-3 pl-10 text-left md:py-6 lg:py-8 lg:pl-20">
               ห้องที่ 2 (002)
             </th>
           </tr>
