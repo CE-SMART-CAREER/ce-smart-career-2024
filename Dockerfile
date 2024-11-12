@@ -1,4 +1,4 @@
-FROM node:20-alpine As base
+FROM node:20-alpine AS base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -7,20 +7,20 @@ RUN corepack enable
 
 WORKDIR /usr/app
 
-FROM base As deps
+FROM base AS deps
 
 COPY package.json pnpm-lock.yaml ./
 
 RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm install --frozen-lockfile
 
-FROM base As builder
+FROM base AS builder
 
 COPY --from=deps --chown=nextjs:nodejs /usr/app/node_modules ./node_modules
 COPY . .
 
 RUN pnpm run build
 
-FROM node:20-alpine As runner
+FROM node:20-alpine AS runner
 
 WORKDIR /usr/app
 
@@ -34,6 +34,7 @@ USER nextjs
 COPY --chown=nextjs:nodejs --from=builder /usr/app/node_modules ./node_modules
 COPY --chown=nextjs:nodejs --from=builder /usr/app/.next/standalone ./
 COPY --chown=nextjs:nodejs --from=builder /usr/app/.next/static ./.next/static
+COPY --chown=nextjs:nodejs --from=builder /usr/app/public ./public
 
 EXPOSE 3000
 
