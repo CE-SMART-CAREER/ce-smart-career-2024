@@ -38,6 +38,14 @@ body {
   white-space: inherit;
 }
 
+.mask-effect::before {
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -106,6 +114,14 @@ body {
       #f6871e 40.5%,
       rgba(0, 0, 0, 0) 100%
     );
+
+    --linear-orange-black-vertical: linear-gradient(
+      180deg,
+      #f6871e 0%,
+      #000000 34.55%
+    );
+
+    --brown-500: #50341b;
 
     --orange-75: #fbcea3;
     --orange-100: #fab97d;

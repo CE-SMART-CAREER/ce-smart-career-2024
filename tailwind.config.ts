@@ -52,6 +52,9 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        brown: {
+          '500': 'var(--brown-500)',
+        },
         orange: {
           '75': 'var(--orange-75)',
           '100': 'var(--orange-100)',
@@ -83,7 +86,8 @@ const config: Config = {
         'linear-orange-black': 'var(--linear-orange-black)',
         'linear-gray-orange': 'var(--linear-gray-orange)',
         'linear-black-orange-hori': 'var(--linear-black-orange-hori)',
-        'radial-orange-black': 'var(--radial-orange-black)'
+        'radial-orange-black': 'var(--radial-orange-black)',
+        'linear-orange-black-vertical': 'var(--linear-orange-black-vertical)'
       },
       keyframes: {
         'accordion-down': {

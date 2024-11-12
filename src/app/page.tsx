@@ -1,5 +1,6 @@
 import {
   CompanyLogos,
+  Description,
   Footer,
   Introduction,
   Location,
@@ -22,6 +23,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
       </header>
       <main>
         <Introduction />
+        <Description />
         <Seminar />
         <CompanyLogos
           companies={companies?.list}
