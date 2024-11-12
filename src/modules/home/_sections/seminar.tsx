@@ -1,5 +1,10 @@
 import Image from 'next/image';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/shared/components/ui/tabs';
 import { SeminarTable } from '@/modules/home/_components';
 import { fDate, formatStr } from '@/shared/utils';
 import { getSeminarsGroupedByDay } from '../_utils';

@@ -31,7 +31,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
             searchParams?.companyId ? Number(searchParams.companyId) : 0
           }
         />
-        <Location />
+        <Location companies={companies?.list} />
       </main>
       <Footer />
     </>

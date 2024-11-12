@@ -13,6 +13,48 @@ body {
   @apply text-white;
 }
 
+.text-filling-animation {
+  position: relative;
+  color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+
+  /* can change */
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    var(--gray-75) 50%,
+    var(--orange-300) 50%
+  );
+  transition: 0.3s;
+}
+
+.text-filling-animation:hover {
+  background-position: -100% 0;
+}
+
+.text-filling-animation::before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  z-index: -1;
+  width: 100%;
+  background-size: 200% 100%;
+
+  /* can change */
+  background-image: linear-gradient(
+    to right,
+    var(--gray-75) 50%,
+    var(--orange-200) 50%
+  );
+  height: 1px;
+  transition: 0.4s;
+}
+
+.text-filling-animation:hover::before {
+  background-position: -100% 0;
+}
+
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);

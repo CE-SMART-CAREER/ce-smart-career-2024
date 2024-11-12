@@ -1,7 +1,7 @@
 import { cn } from '@/shared/utils/cn';
 import { GradientCard } from '@/shared/components';
-import { AspectRatio } from '@radix-ui/react-aspect-ratio';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
+import { AspectRatio } from '@/shared/components/ui/aspect-ratio';
+
 import {
   Dialog,
   DialogContent,
@@ -9,36 +9,44 @@ import {
 } from '@/shared/components/ui/dialog';
 import Image from 'next/image';
 
-import { tabsContent, tabsTrigger } from '../_constants';
-import { companyList } from '@/shared/constants';
-import type { ChartContent, TriggerBtn } from '../_types';
-import type { Company } from '@/shared/types';
+import { DayValueTrigger, tabsContent, tabsTrigger } from '../_constants';
+import type { ChartContent, Company, TriggerBtn } from '../_types';
 import { Button } from '@/shared/components/ui/button';
 
-import { Icon } from '@iconify/react';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/shared/components/ui/tabs';
+import { SearchCompany } from '../_components/search-company';
 
 type ChartProps = {
   content: ChartContent;
 };
 
+type LocationProps = {
+  companies: Company[];
+};
+
 function Chart({ content }: ChartProps) {
   return (
-    <div className="flex h-full w-full flex-col justify-center gap-2 py-5 lg:py-0">
-      <AspectRatio className="flex h-full w-full items-center" ratio={16 / 7}>
+    <section className="flex w-full flex-col justify-center gap-2 py-5 lg:py-0">
+      <AspectRatio className="w-full items-center" ratio={16 / 7}>
         <Image
           src={content.src}
           alt={content.alt}
-          width={725}
-          height={290}
-          className="w-full animate-fade rounded-sm"
+          fill
+          className="animate-fade rounded-sm"
         />
       </AspectRatio>
+
       <Dialog>
         <DialogTrigger asChild className="block self-start sm:hidden">
           <Button variant="outline">ขยายภาพ</Button>
         </DialogTrigger>
-        <DialogContent className="flex h-1/2 w-[90vw] rounded-lg p-9">
-          <div className="flex h-full overflow-x-scroll">
+        <DialogContent className="flex w-[90vw] rounded-lg p-9">
+          <section className="flex overflow-x-scroll">
             <Image
               src={content.src}
               alt={content.alt}
@@ -46,30 +54,30 @@ function Chart({ content }: ChartProps) {
               height={290}
               className="h-full min-w-[725px] rounded-md"
             />
-          </div>
+          </section>
         </DialogContent>
       </Dialog>
-    </div>
+    </section>
   );
 }
 
-export default function Location() {
+export default function Location({ companies }: LocationProps) {
   const activeTabStyle =
     'data-[state=active]:text-orange-300 data-[state=active]:border-b-orange-300';
 
   return (
-    <div className="relative mx-auto flex min-h-svh flex-col justify-center lg:h-svh xl:max-w-screen-xl">
-      <div className="flex h-full w-full flex-col gap-5 p-10 sm:p-20 lg:justify-center xl:p-0">
-        <div id="locations" className="anchor-holder invisible p-4">
-          $
-        </div>
+    <article
+      id="locations"
+      className="relative flex w-full flex-col justify-center px-8 py-10 lg:h-svh"
+    >
+      <section className="mx-auto flex w-full flex-col justify-center gap-5 xl:max-w-screen-xl">
         <h2 className="w-full text-2xl font-bold sm:text-3xl md:text-4xl">
           สถานที่ และผังงาน
         </h2>
 
         <Tabs
-          defaultValue={tabsTrigger[0].value}
-          className="flex h-1/2 w-full flex-col gap-2 sm:gap-5 xl:h-2/3"
+          defaultValue={DayValueTrigger.FIRST_DAY}
+          className="flex w-full flex-col gap-2 sm:gap-5"
         >
           <TabsList className="lg:gap-15 flex gap-10 overflow-x-auto text-end font-bold sm:overflow-visible">
             {tabsTrigger.map((trigger: TriggerBtn) => {
@@ -77,7 +85,7 @@ export default function Location() {
                 <TabsTrigger
                   className={cn(
                     activeTabStyle,
-                    'mb-2 flex flex-shrink-0 items-end justify-end gap-7 border-b-[4px] border-b-gray-500 pb-2 md:gap-10',
+                    'mb-2 flex flex-shrink-0 items-end justify-end gap-7 rounded-none border-b-4 border-b-gray-500 pb-2 md:gap-10',
                   )}
                   value={trigger.value}
                   key={trigger.value}
@@ -93,12 +101,12 @@ export default function Location() {
             })}
           </TabsList>
 
-          <div className="flex h-full flex-col gap-5 lg:flex-row">
-            <GradientCard className="flex h-full w-full items-center justify-center self-baseline px-5">
+          <section className="flex flex-col gap-5 lg:flex-row">
+            <GradientCard className="flex h-full w-full items-center justify-center p-5">
               {tabsContent.map((content: ChartContent) => {
                 return (
                   <TabsContent
-                    className="h-full w-full"
+                    className="w-full self-center"
                     value={content.value}
                     key={content.value}
                   >
@@ -108,42 +116,15 @@ export default function Location() {
               })}
             </GradientCard>
 
-            <GradientCard className="flex h-full w-full basis-[45%] flex-col gap-5 self-end p-7 lg:p-10">
+            <GradientCard className="flex max-h-[80svh] w-full flex-grow-0 basis-[45%] flex-col gap-5 p-7 lg:max-h-none lg:p-10">
               <h3 className="text-2xl font-bold text-orange-300">
                 ค้นหาชื่อบริษัท
               </h3>
-
-              <GradientCard className="flex items-center gap-5 px-5 py-1">
-                <span>
-                  <Icon
-                    icon="hugeicons:search-01"
-                    width="1.25rem"
-                    height="1.25rem"
-                  />
-                </span>
-                <input
-                  className="h-full w-full bg-transparent placeholder-gray-100 focus:outline-0"
-                  type="text"
-                  placeholder="พิมพ์ชื่อบริษัท"
-                ></input>
-              </GradientCard>
-
-              <ul className="flex max-h-[350px] w-full flex-col gap-2 overflow-y-auto pr-3 text-sm sm:text-base">
-                {companyList.map((company: Company) => {
-                  return (
-                    <li
-                      className="cursor-pointer border-b-2 border-b-gray-400 py-2 hover:border-b-orange-200 hover:text-orange-200"
-                      key={company.name}
-                    >
-                      {company.name}
-                    </li>
-                  );
-                })}
-              </ul>
+              <SearchCompany companies={companies} />
             </GradientCard>
-          </div>
+          </section>
         </Tabs>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 }
