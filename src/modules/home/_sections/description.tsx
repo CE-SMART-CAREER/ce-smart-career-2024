@@ -4,6 +4,8 @@ import Image from 'next/image';
 export default function Description() {
   return (
     <div className="relative z-0 overflow-hidden bg-linear-orange-black-vertical">
+      <div className="absolute bottom-0 right-[calc(50%-300px)] z-50 hidden h-[98px] w-full bg-brown-500 lg:block"></div>
+      <div className="absolute bottom-0 right-0 z-50 hidden h-[12px] w-full bg-brown-500 lg:block"></div>
       <div className="container relative mx-auto px-5 py-12 lg:py-36 xl:max-w-screen-lg">
         {/* background start here */}
         <div className="absolute right-[10px] top-[15%] z-20 hidden w-[421px] max-w-[30%] lg:block">
@@ -25,7 +27,6 @@ export default function Description() {
             height={300}
             objectFit="contain"
           ></Image>
-          <div className="bg-brown-500 absolute bottom-0 left-0 z-20 h-[100px] w-[calc(100%-150px)]"></div>
         </div>
         <div className="absolute -bottom-[250px] -right-[200px] z-10 hidden h-[968px] w-[1024px] lg:block">
           <Image

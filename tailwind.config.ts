@@ -52,6 +52,9 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        brown: {
+          '500': 'var(--brown-500)',
+        },
         orange: {
           '75': 'var(--orange-75)',
           '100': 'var(--orange-100)',
