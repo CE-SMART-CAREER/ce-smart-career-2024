@@ -19,6 +19,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Create .env file
+        run: |
+          echo "NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }}" >> .env
+          echo "NOCODB_API_URL=${{ secrets.NOCODB_API_URL }}" >> .env
+
       - name: Deploy docker-compose stack
         run: docker compose up -d --build --force-recreate
 
