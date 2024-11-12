@@ -29,7 +29,10 @@ function Grid() {
 
 export default function Introduction() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
+    <div
+      id="about"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden p-4"
+    >
       <City />
 
       <div className="relative flex flex-col items-center justify-center md:-mt-32">
