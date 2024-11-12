@@ -62,6 +62,7 @@ const config: Config = {
           '300': 'var(--orange-300)',
           '400': 'var(--orange-400)',
           '500': 'var(--orange-500)',
+          'flare': 'var(--orange-flare)',
         },
         gray: {
           '75': 'var(--gray-75)',
@@ -87,6 +88,7 @@ const config: Config = {
         'linear-gray-orange': 'var(--linear-gray-orange)',
         'linear-black-orange-hori': 'var(--linear-black-orange-hori)',
         'radial-orange-black': 'var(--radial-orange-black)',
+        'linear-orange-red': 'var(--linear-orange-red)',
         'linear-orange-black-vertical': 'var(--linear-orange-black-vertical)'
       },
       keyframes: {
