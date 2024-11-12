@@ -21,10 +21,10 @@ export default async function Seminar() {
           className="object-cover"
         />
       </div>
-      <div className="absolute left-6 top-20 h-20 w-20 rounded-full bg-orange-100 opacity-50 blur-2xl sm:h-16 sm:w-16 md:h-48 md:w-48 md:opacity-25 xl:left-10 xl:h-60 xl:w-60"></div>
-      <div className="absolute left-0 top-20 h-24 w-32 rounded-full bg-orange-200 opacity-50 blur-3xl sm:h-28 sm:w-36 md:h-64 md:w-80 md:opacity-25 xl:left-14 xl:h-96 xl:w-72"></div>
 
       <div className="relative mx-auto flex w-10/12 flex-col md:w-3/4">
+        <div className="xl:-left-30 xl:-top-30 absolute -left-10 -top-10 h-20 w-20 rounded-full bg-orange-100 opacity-50 blur-2xl sm:-left-8 sm:-top-8 sm:h-16 sm:w-16 md:-left-24 md:-top-24 md:h-48 md:w-48 md:opacity-25 xl:h-60 xl:w-60"></div>
+        <div className="sm:-left-18 absolute -left-16 -top-12 h-24 w-32 rounded-full bg-orange-200 opacity-50 blur-3xl sm:-top-14 sm:h-28 sm:w-36 md:-left-40 md:-top-32 md:h-64 md:w-80 md:opacity-25 xl:-left-36 xl:-top-40 xl:h-96 xl:w-72"></div>
         <h2 className="w-full text-3xl font-bold sm:text-3xl md:text-4xl">
           กำหนดการสัมมนา
         </h2>
