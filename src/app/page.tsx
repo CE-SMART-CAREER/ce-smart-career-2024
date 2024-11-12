@@ -1,6 +1,7 @@
 import {
   CompanyLogos,
   Footer,
+  Introduction,
   Location,
   Seminar,
 } from '@/modules/home/_sections';
@@ -20,6 +21,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
         <NavBar />
       </header>
       <main>
+        <Introduction />
         <Seminar />
         <CompanyLogos
           companies={companies?.list}

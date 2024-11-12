@@ -5,3 +5,5 @@ export { default as CompanyLogos } from './company-logos';
 export { default as Seminar } from './seminar';
 
 export { default as Footer } from './footer';
+
+export { default as Introduction } from './introduction';
