@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: label-1
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -37,7 +37,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: self-hosted
+    runs-on: label-1
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -45,6 +45,6 @@ jobs:
       - name: Deploy to our k8s
         run: |
           microk8s kubectl apply -f deploy/deployment.yml
-          microk8s kubectl rollout restart deployment/ce-smart-career-frontend-prd -n ce-next-gen-prd
+          microk8s kubectl rollout restart deployment/ce-next-gen-2024-frontend-prd -n ce-next-gen-prd
           microk8s kubectl apply -f deploy/service.yml
           microk8s kubectl apply -f deploy/ingress.yml
