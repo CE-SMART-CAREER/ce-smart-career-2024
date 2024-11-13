@@ -7,7 +7,7 @@ export async function getSeminarsGroupedByDay(): Promise<SeminarDay[]> {
   const seminarDBList = await getSeminars().then((res) => res.list);
   const companyDBList = await getCompanies().then((res) => res.list);
 
-  seminarDBList.forEach((seminar) => {
+  seminarDBList?.forEach((seminar) => {
     if (!dayjs(seminar.startAt).isValid() || !dayjs(seminar.endAt).isValid()) {
       return;
     }
