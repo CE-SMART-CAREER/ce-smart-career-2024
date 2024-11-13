@@ -17,7 +17,7 @@ export function SearchCompany({ companies }: Props) {
   const [searchValue, setSearchValue] = useState<string>('');
   const companyList = useMemo(() => {
     return companies
-      .filter((company: Company) =>
+      ?.filter((company: Company) =>
         company.name.toLowerCase().includes(searchValue),
       )
       .map((company: Company, index: number) => {
