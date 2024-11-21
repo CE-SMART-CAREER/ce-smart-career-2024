@@ -23,6 +23,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GTK_STG }}
+      
+      - name: Create .env file
+        run: |
+          echo "NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }}" >> .env
+          echo "NOCODB_API_URL=${{ secrets.NOCODB_API_URL }}" >> .env
 
       - name: Convert repository name to lowercase
         run: echo "REPO=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> ${GITHUB_ENV}
