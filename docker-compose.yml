@@ -1,9 +1,10 @@
 services:
   ce-smart-career:
     container_name: ce-smart-career
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/ce-smart-career/ce-smart-career-2024-stg:latest
     restart: always
     ports:
-      - 3000:3000
+      - '3000:3000'
+    environment:
+      - NOCODB_API_URL
+      - NOCODB_API_TOKEN

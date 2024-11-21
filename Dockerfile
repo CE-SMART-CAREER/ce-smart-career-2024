@@ -18,7 +18,9 @@ FROM base AS builder
 COPY --from=deps --chown=nextjs:nodejs /usr/app/node_modules ./node_modules
 COPY . .
 
-RUN pnpm run build
+RUN --mount=type=secret,id=NOCODB_API_URL,env=NOCODB_API_URL \
+    --mount=type=secret,id=NOCODB_API_TOKEN,env=NOCODB_API_TOKEN \
+    pnpm run build
 
 FROM node:20-alpine AS runner
 
