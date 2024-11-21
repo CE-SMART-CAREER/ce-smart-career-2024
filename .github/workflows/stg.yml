@@ -28,6 +28,7 @@ jobs:
         run: |
           echo "NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }}" >> .env
           echo "NOCODB_API_URL=${{ secrets.NOCODB_API_URL }}" >> .env
+          cat .env
 
       - name: Convert repository name to lowercase
         run: echo "REPO=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> ${GITHUB_ENV}
