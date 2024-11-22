@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - career.ktyhon.online
-    secretName: ce-smart-career-prd-ingress-tls
+    - career.cesmartcamp.com
+    secretName: ce-smart-career-fe-prd-ingress-tls
   rules:
-  - host: "career.ktyhon.online"
+  - host: "career.cesmartcamp.com"
     http:
       paths:
       - path: /
