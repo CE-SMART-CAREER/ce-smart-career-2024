@@ -4,7 +4,7 @@ metadata:
   name: ce-smart-career-frontend-prd
   namespace: ce-smart-career
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: ce-smart-career-frontend-prd
