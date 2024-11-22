@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - career.ktyhon.online
-    secretName: 
+    secretName: ce-smart-career-prd-ingress-tls
   rules:
   - host: "career.ktyhon.online"
     http:
