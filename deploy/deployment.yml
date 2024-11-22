@@ -19,6 +19,11 @@ spec:
         - name: ce-smart-career-frontend-prd
           image: ghcr.io/ce-smart-career/ce-smart-career-2024-prd:latest
           imagePullPolicy: Always
+          env:
+            - name: NOCODB_API_URL
+              value: "https://api.career.ktyhon.online/api/v2/tables"
+            - name: NOCODB_API_TOKEN
+              value: "gfu57tftfdyertdxhfdteto"
           ports:
             - containerPort: 3000
       imagePullSecrets:
