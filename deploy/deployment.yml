@@ -4,7 +4,7 @@ metadata:
   name: ce-smart-career-frontend-prd
   namespace: ce-smart-career
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: ce-smart-career-frontend-prd
@@ -21,9 +21,15 @@ spec:
           imagePullPolicy: Always
           env:
             - name: NOCODB_API_URL
-              value: "https://api.career.ktyhon.online/api/v2/tables"
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_API_URL
             - name: NOCODB_API_TOKEN
-              value: "gfu57tftfdyertdxhfdteto"
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_API_TOKEN
           ports:
             - containerPort: 3000
       imagePullSecrets:
