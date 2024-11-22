@@ -48,6 +48,6 @@ jobs:
       - name: Deploy to our k8s
         run: |
           microk8s kubectl apply -f deploy/deployment.yml
-          microk8s kubectl rollout restart deployment/ce-next-gen-2024-frontend-prd -n ce-next-gen-prd
+          microk8s kubectl rollout restart deployment/ce-smart-career-frontend-prd -n ce-smart-career
           microk8s kubectl apply -f deploy/service.yml
           microk8s kubectl apply -f deploy/ingress.yml
