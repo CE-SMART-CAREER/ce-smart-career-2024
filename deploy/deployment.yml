@@ -4,7 +4,7 @@ metadata:
   name: ce-smart-career-frontend-prd
   namespace: ce-smart-career
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: ce-smart-career-frontend-prd
@@ -30,6 +30,16 @@ spec:
                 secretKeyRef:
                   name: nocodb-credentials
                   key: NOCODB_API_TOKEN
+            - name: NOCODB_COMPANY_DB
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_COMPANY_DB
+            - name: NOCODB_SEMINAR_DB
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_SEMINAR_DB
           ports:
             - containerPort: 3000
       imagePullSecrets:
