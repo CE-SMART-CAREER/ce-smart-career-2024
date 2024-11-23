@@ -6,10 +6,10 @@ on:
       - main
 
 env:
-  NOCODB_API_TOKEN: ${{ secrets.STG_NOCODB_API_TOKEN }}
-  NOCODB_API_URL: ${{ secrets.STG_NOCODB_API_URL }}
-  NOCODB_COMPANY_DB: ${{ secrets.STG_NOCODB_COMPANY_DB }}
-  NOCODB_SEMINAR_DB: ${{ secrets.STG_NOCODB_SEMINAR_DB }}
+  NOCODB_API_TOKEN: ${{ secrets.NOCODB_API_TOKEN }}
+  NOCODB_API_URL: ${{ secrets.NOCODB_API_URL }}
+  NOCODB_COMPANY_DB: ${{ secrets.NOCODB_COMPANY_DB }}
+  NOCODB_SEMINAR_DB: ${{ secrets.NOCODB_SEMINAR_DB }}
 
 jobs:
   build:
@@ -39,10 +39,10 @@ jobs:
           cache-to: type=gha,mode=max
           tags: ghcr.io/ce-smart-career/${{ github.event.repository.name }}-prd:latest
           secrets: |
-            NOCODB_API_TOKEN=${{ secrets.STG_NOCODB_API_TOKEN }}
-            NOCODB_API_URL=${{ secrets.STG_NOCODB_API_URL }}
-            NOCODB_COMPANY_DB=${{ secrets.STG_NOCODB_COMPANY_DB }}
-            NOCODB_SEMINAR_DB=${{ secrets.STG_NOCODB_SEMINAR_DB }}
+            NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }}
+            NOCODB_API_URL=${{ secrets.NOCODB_API_URL }}
+            NOCODB_COMPANY_DB=${{ secrets.NOCODB_COMPANY_DB }}
+            NOCODB_SEMINAR_DB=${{ secrets.NOCODB_SEMINAR_DB }}
 
   deploy:
     name: Deploy
