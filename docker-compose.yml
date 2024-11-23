@@ -8,3 +8,5 @@ services:
     environment:
       - NOCODB_API_URL
       - NOCODB_API_TOKEN
+      - NOCODB_SEMINAR_DB
+      - NOCODB_COMPANY_DB
