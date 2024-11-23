@@ -10,25 +10,35 @@ type Props = {
 
 export function CompanyLogo({ name, logo, companyId }: Props) {
   return (
-    <Link
-      key={companyId}
-      href={{ query: { companyId: companyId } }}
-      scroll={false}
+    <div
+      style={{
+        animationTimeline: 'view(block 10% 10%)',
+        animationName: 'fadeInOut',
+        animationFillMode: 'both',
+        animationDuration: '1ms',
+        animationTimingFunction: 'linear',
+      }}
     >
-      <div className="cursor-pointer rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
-        <AspectRatio
-          ratio={16 / 9}
-          className="flex w-full items-center justify-center outline-none"
-        >
-          <Image
-            src={logo}
-            alt={name}
-            width={164}
-            height={61}
-            className="h-full object-contain"
-          />
-        </AspectRatio>
-      </div>
-    </Link>
+      <Link
+        key={companyId}
+        href={{ query: { companyId: companyId } }}
+        scroll={false}
+      >
+        <div className="cursor-pointer rounded-[var(--radius)] bg-white px-5 py-3 shadow-lg">
+          <AspectRatio
+            ratio={16 / 9}
+            className="flex w-full items-center justify-center outline-none"
+          >
+            <Image
+              src={logo}
+              alt={name}
+              width={164}
+              height={61}
+              className="h-full object-contain"
+            />
+          </AspectRatio>
+        </div>
+      </Link>
+    </div>
   );
 }

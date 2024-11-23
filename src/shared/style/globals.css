@@ -287,3 +287,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
