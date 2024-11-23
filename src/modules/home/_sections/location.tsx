@@ -113,7 +113,7 @@ export default function Location({ companies }: LocationProps) {
               })}
             </GradientCard>
 
-            <GradientCard className="flex max-h-[80svh] w-full flex-grow-0 basis-[45%] flex-col gap-5 p-7 lg:max-h-none lg:p-10">
+            <GradientCard className="flex max-h-[65svh] w-full flex-grow-0 basis-[45%] flex-col gap-5 p-7 sm:max-h-[50svh] lg:max-h-none lg:p-10">
               <h3 className="text-2xl font-bold text-orange-300">
                 ค้นหาชื่อบริษัท
               </h3>

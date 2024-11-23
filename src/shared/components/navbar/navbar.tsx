@@ -12,8 +12,8 @@ export function NavBar() {
   const currenSection = useCurrentSectionStore((state) => state.currentSection);
 
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray p-4 backdrop-blur-[100px]">
-      <h1 className="font-bold">CE Smart Career 2024</h1>
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray px-8 py-8 text-lg backdrop-blur-[100px] lg:px-12 lg:text-xl">
+      <h1 className="text-xl font-bold lg:text-2xl">CE Smart Career 2024</h1>
 
       <Root onOpenChange={(open) => setIsMenuOpen(open)}>
         <Trigger className="md:hidden" aria-label="Open Menu">
@@ -62,7 +62,7 @@ export function NavBar() {
         </Content>
       </Root>
 
-      <ul className="mx-2 hidden space-x-6 font-bold md:flex">
+      <ul className="mx-2 hidden space-x-4 font-bold md:flex lg:space-x-10">
         {NAV_LINKS.map((navLink, index) => (
           <li key={index}>
             <Link
