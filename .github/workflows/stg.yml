@@ -42,7 +42,7 @@ jobs:
             NOCODB_API_TOKEN=${{ secrets.STG_NOCODB_API_TOKEN }}
             NOCODB_API_URL=${{ secrets.STG_NOCODB_API_URL }}
             NOCODB_COMPANY_DB=${{ secrets.STG_NOCODB_COMPANY_DB }}
-            NOCODB_SEMINAR_DB: ${{ secrets.STG_NOCODB_SEMINAR_DB }}
+            NOCODB_SEMINAR_DB=${{ secrets.STG_NOCODB_SEMINAR_DB }}
 
   deploy:
     name: deploy
