@@ -290,7 +290,7 @@ body {
 
 @keyframes fadeInOut {
   0% {
-    opacity: 0;
+    opacity: 0.3;
   }
 
   25%,
@@ -299,6 +299,6 @@ body {
   }
 
   100% {
-    opacity: 0;
+    opacity: 0.6;
   }
 }
