@@ -17,8 +17,4 @@ export const NAV_LINKS: NavListItem[] = [
     name: 'สถานที่',
     href: '#locations',
   },
-  {
-    name: 'ช่องทางติดต่อ',
-    href: '#contact',
-  },
 ];

@@ -1,45 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Root, Trigger, Content, Arrow } from '@radix-ui/react-popover';
 import { NAV_LINKS } from './_constants';
 import Link from 'next/link';
 import { cn } from '@/shared/utils';
+import { useCurrentSectionStore } from '@/modules/home/_store';
 
 export function NavBar() {
-  const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const sections = NAV_LINKS.map((navLink) =>
-      document.querySelector(navLink.href),
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.8,
-      },
-    );
-
-    sections.forEach((section) => {
-      if (section) {
-        observer.observe(section);
-      }
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
+  const currenSection = useCurrentSectionStore((state) => state.currentSection);
 
   return (
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray p-4 backdrop-blur-[100px]">
@@ -78,7 +48,7 @@ export function NavBar() {
                   href={navLink.href}
                   className={cn(
                     'transition-colors',
-                    activeSection === navLink.href.slice(1)
+                    currenSection === navLink.href.slice(1)
                       ? 'text-orange-200 underline underline-offset-4'
                       : 'hover:text-shadow-orange text-white',
                   )}
@@ -99,7 +69,7 @@ export function NavBar() {
               href={navLink.href}
               className={cn(
                 'transition-colors',
-                activeSection === navLink.href.slice(1)
+                currenSection === navLink.href.slice(1)
                   ? 'text-orange-200 underline underline-offset-4'
                   : 'text-white hover:text-orange-300',
               )}
