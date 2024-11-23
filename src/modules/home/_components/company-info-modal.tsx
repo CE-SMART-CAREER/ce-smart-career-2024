@@ -11,15 +11,24 @@ import {
   DialogTitle,
 } from '@/shared/components/ui/dialog';
 import { useRouter } from 'next/navigation';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 type Props = {
   name: string;
   logo: string;
-  type: string;
+  url: string;
   description: string;
+  contact: string;
 };
 
-export function CompanyInfoModal({ name, logo, type, description }: Props) {
+export function CompanyInfoModal({
+  name,
+  logo,
+  url,
+  description,
+  contact,
+}: Props) {
   const router = useRouter();
 
   const closeModal = () => {
@@ -40,11 +49,31 @@ export function CompanyInfoModal({ name, logo, type, description }: Props) {
               className="mx-auto h-[164px] w-full max-w-[30ch] object-contain"
             />
             <DialogTitle>
-              <div className="text-md mt-4">{name}</div>
-              <div className="pt-2 text-orange-300">{type}</div>
+              <div className="flex gap-2">
+                <div className="text-md">{name}</div>
+                {url && (
+                  <Link href={url} target="_blank" rel="noopener noreferrer">
+                    <Icon
+                      icon="radix-icons:external-link"
+                      className="cursor-pointer text-gray-400 hover:text-orange-300"
+                      width="1rem"
+                      height="1rem"
+                    />
+                  </Link>
+                )}
+              </div>
+              {/* <div className="pt-2 text-orange-300">{type}</div> */}
             </DialogTitle>
             <DialogDescription>
               <div>{description}</div>
+              {contact && (
+                <div className="mt-2">
+                  <span className="font-medium text-black">
+                    ติดต่อสอบถามเพิ่มเติมได้ที่
+                  </span>
+                  <p>{contact}</p>
+                </div>
+              )}
             </DialogDescription>
           </div>
         </DialogContent>

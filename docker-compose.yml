@@ -2,9 +2,12 @@ services:
   ce-smart-career:
     container_name: ce-smart-career
     image: ghcr.io/ce-smart-career/ce-smart-career-2024-stg:latest
+    pull_policy: always
     restart: always
     ports:
       - '3000:3000'
     environment:
       - NOCODB_API_URL
       - NOCODB_API_TOKEN
+      - NOCODB_SEMINAR_DB
+      - NOCODB_COMPANY_DB

@@ -7,17 +7,16 @@ import {
 } from '@/shared/components/ui/tabs';
 import { SeminarTable } from '@/modules/home/_components';
 import { fDate, formatStr } from '@/shared/utils';
-import { getSeminarsGroupedByDay } from '../_utils';
+import type { SeminarDay } from '../_types';
 
-export default async function Seminar() {
-  const seminarList = await getSeminarsGroupedByDay();
+type Props = {
+  seminarList: SeminarDay[];
+};
 
+export default function Seminar({ seminarList }: Props) {
   return (
-    <article
-      id="seminar"
-      className="relative z-0 mx-auto flex flex-col bg-black pb-20"
-    >
-      <div className="relative w-full">
+    <article className="relative z-0 mx-auto flex flex-col bg-black py-24 lg:py-36">
+      <div className="absolute left-0 top-0 w-full">
         <Image
           src="/assets/illustrations/cloud.png"
           alt="cloud-png"
@@ -27,7 +26,7 @@ export default async function Seminar() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-10/12 flex-col md:w-3/4">
+      <div className="relative mx-auto flex w-10/12 flex-col md:w-7/12">
         <div className="small-circle xl:-left-30 xl:-top-30 absolute -left-10 -top-10 h-20 w-20 rounded-full bg-linear-orange-red opacity-50 blur-2xl sm:-left-8 sm:-top-8 sm:h-16 sm:w-16 md:-left-24 md:-top-24 md:h-48 md:w-48 md:opacity-25 xl:h-60 xl:w-60"></div>
         <div className="big-circle sm:-left-18 absolute -left-16 -top-12 h-24 w-32 rounded-full bg-orange-flare opacity-50 blur-3xl sm:-top-14 sm:h-28 sm:w-36 md:-left-40 md:-top-32 md:h-64 md:w-80 md:opacity-25 xl:-left-36 xl:-top-40 xl:h-96 xl:w-72"></div>
         <h2 className="z-10 w-full text-3xl font-bold sm:text-3xl md:text-4xl">

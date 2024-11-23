@@ -2,6 +2,7 @@ export type Company = {
   Id: number;
   name: string;
   description: string;
+  contact: string;
   url: string;
   logo: string;
   date: string;
