@@ -20,11 +20,14 @@ export function SearchCompany({ companies }: Props) {
       ?.filter((company: Company) =>
         company.name.toLowerCase().includes(searchValue.toLowerCase()),
       )
+      .sort((refCompany: Company, company: Company) => {
+        return refCompany.name.localeCompare(company.name);
+      })
       .map((company: Company, index: number) => {
         return (
           <TabsTrigger
             value={dayMapper.get(company.date) ?? DayValueTrigger.FIRST_DAY}
-            className="text-filling-animation flex w-full flex-shrink-0 cursor-pointer py-2"
+            className="text-filling-animation flex w-full flex-shrink-0 cursor-pointer py-2 text-left"
             key={`${company.name}-${index}`}
           >
             {company.name}
