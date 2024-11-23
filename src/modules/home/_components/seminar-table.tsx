@@ -16,10 +16,7 @@ export function SeminarTable({ seminars }: Props) {
               เวลา
             </th>
             <th className="w-1/3 animate-fade border-b-2 border-gray-500 p-2 text-left md:px-10 md:py-6 lg:py-8 lg:pl-20">
-              ห้องที่ 1 (802)
-            </th>
-            <th className="w-1/3 animate-fade border-b-2 border-gray-500 p-2 text-left md:px-10 md:py-6 lg:py-8 lg:pl-20">
-              ห้องที่ 2 (807)
+              ห้อง 811
             </th>
           </tr>
         </thead>
@@ -30,10 +27,7 @@ export function SeminarTable({ seminars }: Props) {
                 {`${fTime(seminar.startAt, formatStr.time24Hr)}-${fTime(seminar.endAt, formatStr.time24Hr)}`}
               </td>
               <td className="w-1/3 animate-fade border-none p-2 md:px-10 md:py-6 lg:py-8 lg:pl-20">
-                {seminar.room1}
-              </td>
-              <td className="w-1/3 animate-fade border-none p-2 md:px-10 md:py-6 lg:py-8 lg:pl-20">
-                {seminar.room2}
+                {seminar.company}
               </td>
             </tr>
           ))}

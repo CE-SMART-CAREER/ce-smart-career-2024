@@ -27,12 +27,12 @@ export const tabsTrigger: TriggerBtn[] = [
 export const tabsContent: ChartContent[] = [
   {
     value: DayValueTrigger.FIRST_DAY,
-    src: '/assets/images/4fb53eca95973f9a1e60dc19a0c0972a.png',
+    src: '/assets/images/plan28.png',
     alt: 'firstDayChart',
   },
   {
     value: DayValueTrigger.SECOND_DAY,
-    src: '/assets/illustrations/cloud.png',
+    src: '/assets/images/plan29.png',
     alt: 'secondDayChart',
   },
 ];
