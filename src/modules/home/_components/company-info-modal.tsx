@@ -64,8 +64,8 @@ export function CompanyInfoModal({
               </div>
               {/* <div className="pt-2 text-orange-300">{type}</div> */}
             </DialogTitle>
-            <DialogDescription>
-              <div>{description}</div>
+            <DialogDescription className="m-0 max-h-[30vh] overflow-y-auto p-[2px] pr-[5px]">
+              <p>{description}</p>
               {contact && (
                 <div className="mt-2">
                   <span className="font-medium text-black">
