@@ -26,23 +26,13 @@ export async function getSeminarsGroupedByDay(): Promise<SeminarDay[]> {
       seminarList.push(seminarDay);
     }
 
-    const existingSeminars = seminarDay.seminars.filter(
-      (s) => s.startAt === seminar.startAt && s.endAt === seminar.endAt,
-    );
+    const newSeminar: SeminarSlot = {
+      startAt: seminar.startAt,
+      endAt: seminar.endAt,
+      company: companyName,
+    };
 
-    if (existingSeminars.length === 0) {
-      const newSeminar: SeminarSlot = {
-        startAt: seminar.startAt,
-        endAt: seminar.endAt,
-        room1: seminar.room === 1 ? companyName : '',
-        room2: seminar.room === 2 ? companyName : '',
-      };
-
-      seminarDay.seminars.push(newSeminar);
-    } else if (existingSeminars.length === 1) {
-      const roomKey = `room${seminar.room}` as 'room1' | 'room2';
-      existingSeminars[0][roomKey] = companyName;
-    }
+    seminarDay.seminars.push(newSeminar);
   });
 
   return seminarList;
