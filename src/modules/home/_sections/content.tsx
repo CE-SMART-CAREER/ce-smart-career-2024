@@ -28,7 +28,6 @@ export default function Content({ companyId, companies, seminarList }: Props) {
       const sectionId = entry.target.getAttribute('id');
 
       if (sectionId) {
-        console.log('sectionId', sectionId);
         setCurrentSection(sectionId);
       }
     }
