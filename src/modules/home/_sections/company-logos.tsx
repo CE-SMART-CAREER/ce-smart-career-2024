@@ -14,13 +14,10 @@ export default function CompanyLogos({ companies, selectedCompanyId }: Props) {
   );
 
   return (
-    <article
-      id="companies"
-      className="mx-auto flex flex-col justify-center bg-black bg-linear-orange-gray"
-    >
+    <article className="mx-auto flex flex-col justify-center bg-black bg-linear-orange-gray py-24 lg:py-32">
       <div className="container relative mx-auto xl:max-w-screen-xl">
         <section className="px-0 py-10 text-white sm:px-10">
-          <h2 className="mb-10 text-center text-3xl font-semibold">
+          <h2 className="mb-10 text-center text-3xl font-semibold md:text-4xl">
             บริษัทที่เข้าร่วม
             <span className="visuallyhidden">กิจกรรม CE smart career 2024</span>
           </h2>

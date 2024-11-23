@@ -52,7 +52,7 @@ export function CompanyInfoModal({
               <div className="flex gap-2">
                 <div className="text-md">{name}</div>
                 {url && (
-                  <Link href={url}>
+                  <Link href={url} target="_blank" rel="noopener noreferrer">
                     <Icon
                       icon="radix-icons:external-link"
                       className="cursor-pointer text-gray-400 hover:text-orange-300"

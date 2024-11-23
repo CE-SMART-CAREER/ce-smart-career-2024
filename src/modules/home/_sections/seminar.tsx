@@ -7,17 +7,16 @@ import {
 } from '@/shared/components/ui/tabs';
 import { SeminarTable } from '@/modules/home/_components';
 import { fDate, formatStr } from '@/shared/utils';
-import { getSeminarsGroupedByDay } from '../_utils';
+import type { SeminarDay } from '../_types';
 
-export default async function Seminar() {
-  const seminarList = await getSeminarsGroupedByDay();
+type Props = {
+  seminarList: SeminarDay[];
+};
 
+export default function Seminar({ seminarList }: Props) {
   return (
-    <article
-      id="seminar"
-      className="relative z-0 mx-auto flex flex-col bg-black pb-20"
-    >
-      <div className="relative w-full">
+    <article className="relative z-0 mx-auto flex flex-col bg-black py-24 lg:py-36">
+      <div className="absolute left-0 top-0 w-full">
         <Image
           src="/assets/illustrations/cloud.png"
           alt="cloud-png"
