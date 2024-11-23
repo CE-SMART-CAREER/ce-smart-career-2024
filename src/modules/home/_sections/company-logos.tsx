@@ -41,8 +41,9 @@ export default function CompanyLogos({ companies, selectedCompanyId }: Props) {
         <CompanyInfoModal
           name={selectedCompany.name}
           logo={selectedCompany.logo}
-          type={selectedCompany.type}
+          url={selectedCompany.url}
           description={selectedCompany.description}
+          contact={selectedCompany.contact}
         />
       )}
     </article>
