@@ -60,6 +60,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GTK_STG }}
 
+      - name: Pull docker image
+        run: docker pull ghcr.io/ce-smart-career/ce-smart-career-2024-stg:latest
+
       - name: Deploy docker-compose stack
         run: docker compose up -d --build --force-recreate
 
