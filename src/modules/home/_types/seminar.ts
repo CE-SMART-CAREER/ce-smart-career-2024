@@ -11,8 +11,7 @@ export type Seminar = {
 export type SeminarSlot = {
   startAt: string;
   endAt: string;
-  room1: string;
-  room2: string;
+  company: string;
 };
 
 export type SeminarDay = {

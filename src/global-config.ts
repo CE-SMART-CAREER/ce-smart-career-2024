@@ -3,6 +3,8 @@ export type ConfigValue = {
   nocodb: {
     apiUrl: string;
     token: string;
+    companyDb: string;
+    seminarDb: string;
   };
 };
 
@@ -11,5 +13,7 @@ export const CONFIG: ConfigValue = {
   nocodb: {
     apiUrl: process.env.NOCODB_API_URL ?? '',
     token: process.env.NOCODB_API_TOKEN ?? '',
+    companyDb: process.env.NOCODB_COMPANY_DB ?? '',
+    seminarDb: process.env.NOCODB_SEMINAR_DB ?? '',
   },
 };

@@ -66,10 +66,7 @@ export default function Location({ companies }: LocationProps) {
     'data-[state=active]:text-orange-300 data-[state=active]:border-b-orange-300';
 
   return (
-    <article
-      id="locations"
-      className="relative flex w-full flex-col justify-center px-8 py-10 lg:h-svh"
-    >
+    <article className="relative flex w-full flex-col justify-center px-8 py-24 lg:h-svh lg:py-36">
       <section className="mx-auto flex w-full flex-col justify-center gap-5 xl:max-w-screen-xl">
         <h2 className="w-full text-2xl font-bold sm:text-3xl md:text-4xl">
           สถานที่ และผังงาน

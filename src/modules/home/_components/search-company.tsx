@@ -18,7 +18,7 @@ export function SearchCompany({ companies }: Props) {
   const companyList = useMemo(() => {
     return companies
       ?.filter((company: Company) =>
-        company.name.toLowerCase().includes(searchValue),
+        company.name.toLowerCase().includes(searchValue.toLowerCase()),
       )
       .map((company: Company, index: number) => {
         return (

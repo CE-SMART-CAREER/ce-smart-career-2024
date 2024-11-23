@@ -1,13 +1,7 @@
-import {
-  CompanyLogos,
-  Description,
-  Footer,
-  Introduction,
-  Location,
-  Seminar,
-} from '@/modules/home/_sections';
+import { Content } from '@/modules/home/_sections';
 import { NavBar } from '@/shared/components/navbar';
 import { getCompanies } from '../modules/home/_services';
+import { getSeminarsGroupedByDay } from '@/modules/home/_utils';
 
 type SearchParamProps = {
   searchParams: Record<string, string>;
@@ -15,25 +9,18 @@ type SearchParamProps = {
 
 export default async function Home({ searchParams }: SearchParamProps) {
   const companies = await getCompanies();
+  const seminarList = await getSeminarsGroupedByDay();
 
   return (
     <>
       <header>
         <NavBar />
       </header>
-      <main>
-        <Introduction />
-        <Description />
-        <Seminar />
-        <CompanyLogos
-          companies={companies?.list}
-          selectedCompanyId={
-            searchParams?.companyId ? Number(searchParams.companyId) : 0
-          }
-        />
-        <Location companies={companies?.list} />
-      </main>
-      <Footer />
+      <Content
+        seminarList={seminarList}
+        companies={companies?.list}
+        companyId={searchParams?.companyId ? Number(searchParams.companyId) : 0}
+      />
     </>
   );
 }
