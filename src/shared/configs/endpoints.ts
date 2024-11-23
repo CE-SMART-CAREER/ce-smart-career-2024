@@ -9,9 +9,9 @@ const ROOTS = {
 
 export const endpoints = {
   company: {
-    records: `${ROOTS.COMPANY}/records`,
+    records: `${ROOTS.COMPANY}/records?limit=1000`,
   },
   seminar: {
-    records: `${ROOTS.SEMINAR}/records`,
+    records: `${ROOTS.SEMINAR}/records?limit=1000`,
   },
 };
