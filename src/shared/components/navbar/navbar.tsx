@@ -12,7 +12,7 @@ export function NavBar() {
   const currenSection = useCurrentSectionStore((state) => state.currentSection);
 
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray px-8 py-8 text-lg backdrop-blur-[100px] lg:px-12 lg:text-xl">
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-linear-orange-gray px-5 py-5 text-lg backdrop-blur-[100px] lg:px-8 lg:text-xl">
       <h1 className="text-xl font-bold lg:text-2xl">CE Smart Career 2024</h1>
 
       <Root onOpenChange={(open) => setIsMenuOpen(open)}>
