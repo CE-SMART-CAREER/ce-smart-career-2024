@@ -20,6 +20,8 @@ COPY . .
 
 RUN --mount=type=secret,id=NOCODB_API_URL,env=NOCODB_API_URL \
     --mount=type=secret,id=NOCODB_API_TOKEN,env=NOCODB_API_TOKEN \
+    --mount=type=secret,id=NOCODB_COMPANY_DB,env=NOCODB_COMPANY_DB \
+    --mount=type=secret,id=NOCODB_SEMINAR_DB,env=NOCODB_SEMINAR_DB \
     pnpm run build
 
 FROM node:20-alpine AS runner
