@@ -36,30 +36,35 @@ export function NavBar() {
           </svg>
         </Trigger>
 
-        <Content
-          align="start"
-          sideOffset={5}
-          className="w-full rounded-lg bg-black p-4 text-white shadow-md md:hidden"
-        >
-          <ul className="flex flex-col space-y-4">
-            {NAV_LINKS.map((navLink, index) => (
-              <li key={index}>
-                <Link
-                  href={navLink.href}
-                  className={cn(
-                    'transition-colors',
-                    currenSection === navLink.href.slice(1)
-                      ? 'text-orange-200 underline underline-offset-4'
-                      : 'hover:text-shadow-orange text-white',
-                  )}
-                >
-                  {navLink.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Arrow className="fill-current text-white" />
-        </Content>
+        {isMenuOpen && (
+          <Content
+            align="start"
+            sideOffset={5}
+            className="w-full rounded-lg bg-black p-4 text-white shadow-md md:hidden"
+          >
+            <ul className="flex flex-col space-y-4">
+              {NAV_LINKS.map((navLink, index) => (
+                <li key={index}>
+                  <Link
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
+                    href={navLink.href}
+                    className={cn(
+                      'transition-colors',
+                      currenSection === navLink.href.slice(1)
+                        ? 'text-orange-200 underline underline-offset-4'
+                        : 'hover:text-shadow-orange text-white',
+                    )}
+                  >
+                    {navLink.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Arrow className="fill-current text-white" />
+          </Content>
+        )}
       </Root>
 
       <ul className="mx-2 hidden space-x-4 font-bold md:flex lg:space-x-10">
