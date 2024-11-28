@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ce-smart-career-frontend-prd
+  namespace: ce-smart-career
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ce-smart-career-frontend-prd
+  template:
+    metadata:
+      labels:
+        app: ce-smart-career-frontend-prd
+      annotations:
+        redeployTimestamp: "{{ timestamp }}"
+    spec:
+      containers:
+        - name: ce-smart-career-frontend-prd
+          image: ghcr.io/ce-smart-career/ce-smart-career-2024-prd:latest
+          imagePullPolicy: Always
+          env:
+            - name: NOCODB_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_API_URL
+            - name: NOCODB_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_API_TOKEN
+            - name: NOCODB_COMPANY_DB
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_COMPANY_DB
+            - name: NOCODB_SEMINAR_DB
+              valueFrom:
+                secretKeyRef:
+                  name: nocodb-credentials
+                  key: NOCODB_SEMINAR_DB
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: registry
